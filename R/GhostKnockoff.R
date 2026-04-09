@@ -1464,10 +1464,10 @@ divide.sdp <- function(Sigma, max.size) {
   }
   
   # Merge small clusters
-  clusters.new = merge.clusters(clusters, max.size)
+  clusters.new = merge_clusters(clusters, max.size)
   while(sum(clusters.new != clusters)>0) {
     clusters = clusters.new
-    clusters.new = merge.clusters(clusters, max.size)
+    clusters.new = merge_clusters(clusters, max.size)
   }
   clusters = clusters.new
   
@@ -1483,7 +1483,7 @@ divide.sdp <- function(Sigma, max.size) {
 }
 
 
-merge.clusters <- function(clusters, max.size) {
+merge_clusters <- function(clusters, max.size) {
   cluster.sizes = table(clusters)
   clusters.new = rep(0, length(clusters))
   g = 1
