@@ -1,4 +1,6 @@
 
+## this file is modified based on https://github.com/cran/GhostKnockoff/blob/master/R/GhostKnockoff.R by Zihuai He
+
 GhostKnockoff.prelim<-function(cor.G, M=5, method='sdp', max.size=500, corr_max=0.75, clusters=NULL, rep.index=NULL){
   n.G<-nrow(cor.G)
   Normal_50Studies<-matrix(rnorm(n.G*M*50),n.G*M,50)
