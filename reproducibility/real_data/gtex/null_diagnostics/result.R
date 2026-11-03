@@ -1,3 +1,5 @@
+# Paths are configured by reproducibility/run.R.
+if (!exists("repro_path", mode = "function")) stop("Run this script through reproducibility/run.R; see reproducibility/README.md.", call. = FALSE)
 
 get_positive_proportion <- function(W, n_bins = 10) {
   
@@ -40,15 +42,15 @@ simulation = 'TRUE'
 # Adipose_Subcutaneous  Muscle_Skeletal Whole_Blood
 
 
-path = paste0("/gpfs/gibbs/pi/zhao/xz527/AnnoKn_revision/4.1GTEx/result/knockoff_chr_", chrid, "_ct_", celltype, "_type_", type, ".RData")
+path = paste0(repro_path("gtex_null_results", "knockoff_chr_"), chrid, "_ct_", celltype, "_type_", type, ".RData")
 if(simulation == 'TRUE'){
-  path = paste0("/gpfs/gibbs/pi/zhao/xz527/AnnoKn_revision/4.1GTEx/result/knockoff_chr_simu_", chrid, "_ct_", celltype, "_type_", type, ".RData")
+  path = paste0(repro_path("gtex_null_results", "knockoff_chr_simu_"), chrid, "_ct_", celltype, "_type_", type, ".RData")
 }
 load(path)
 
-path = paste0("/gpfs/gibbs/pi/zhao/xz527/AnnoKn_revision/4.1GTEx/result/annokn_chr_", chrid, "_ct_", celltype, "_type_", type, ".RData")
+path = paste0(repro_path("gtex_null_results", "annokn_chr_"), chrid, "_ct_", celltype, "_type_", type, ".RData")
 if(simulation == 'TRUE'){
-  path = paste0("/gpfs/gibbs/pi/zhao/xz527/AnnoKn_revision/4.1GTEx/result/annokn_chr_simu_", chrid, "_ct_", celltype, "_type_", type, ".RData")
+  path = paste0(repro_path("gtex_null_results", "annokn_chr_simu_"), chrid, "_ct_", celltype, "_type_", type, ".RData")
 }
 load(path)
 
@@ -82,7 +84,7 @@ g = ggplot(df_hist, aes(x = W, fill = Method)) +
   )
 
 
-ggsave("/gpfs/gibbs/pi/zhao/xz527/AnnoKn_revision_plots/GTEx4.1/null_distribution.pdf", 
+ggsave(repro_path("revision_plots", "GTEx4.1/null_distribution.pdf"),
        g, 
        width = 6, height = 4, units = "in", 
        bg = "white", device = cairo_pdf)
@@ -135,7 +137,7 @@ g = ggplot(df_prop, aes(x = bin, y = positive_proportion, fill = Method)) +
   )
 
 
-ggsave("/gpfs/gibbs/pi/zhao/xz527/AnnoKn_revision_plots/GTEx4.1/null_proportion.pdf", 
+ggsave(repro_path("revision_plots", "GTEx4.1/null_proportion.pdf"),
        g, 
        width = 8, height = 5, units = "in", 
        bg = "white", device = cairo_pdf)

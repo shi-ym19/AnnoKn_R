@@ -1,5 +1,7 @@
+# Paths are configured by reproducibility/run.R.
+if (!exists("repro_path", mode = "function")) stop("Run this script through reproducibility/run.R; see reproducibility/README.md.", call. = FALSE)
 
-cairo_pdf("/gpfs/gibbs/pi/zhao/xz527/AnnoKn_revision_plots/AnnoKn_2dim_type.pdf",
+cairo_pdf(repro_path("revision_plots", "AnnoKn_2dim_type.pdf"),
           width = 10, height = 10, bg = "white")
 
 par(mfrow = c(2, 2))
@@ -85,7 +87,7 @@ for (type_i in 1:4) {
   removelist <- c()
   
   for (i in 1:iteration) {
-    path = paste0("/gpfs/gibbs/pi/zhao/xz527/AnnoKn_revision/knockoff/simulation/2dimen/result/result_", 
+    path = paste0(repro_path("annokn_2d_results", "result_"),
                   binary, "_amp_",amp, "_type_", type, "_cor_", cortype, "_", i,".RData")
     
     
@@ -216,7 +218,7 @@ g <- g + geom_blank(
 print(g)
 
 
-plot_path = paste0("/gpfs/gibbs/pi/zhao/xz527/AnnoKn_revision_plots/AnnoKn_2dim_", binary, "_", cortype, ".pdf")
+plot_path = paste0(repro_path("revision_plots", "AnnoKn_2dim_"), binary, "_", cortype, ".pdf")
 
 ggsave(plot_path, 
        g, 
@@ -248,7 +250,7 @@ time1 <- time2 <- time3 <- time4 <- time5 <- time6 <- time7 <- numeric()
 removelist <- c()
 
 for (i in 1:iteration) {
-  path = paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/knockoff/simulation/2dimen/result/result_", 
+  path = paste0(repro_path("annokn_2d_timing_results", "result_"),
                 binary, "_amp_",amp, "_type_", type, "_", i,".RData")
   
   if (!file.exists(path)) {
@@ -317,7 +319,7 @@ g <- ggplot(tmp_df, aes(x = method, y = time, fill = method)) +
 
 g
 
-ggsave("/gpfs/gibbs/pi/zhao/xz527/AnnoKn_revision_plots/AnnoKn_2dim_time_continuous.pdf", 
+ggsave(repro_path("revision_plots", "AnnoKn_2dim_time_continuous.pdf"),
        g, 
        width = 6, height = 5, units = "in", 
        bg = "white", device = cairo_pdf)

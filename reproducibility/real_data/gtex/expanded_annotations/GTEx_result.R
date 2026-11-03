@@ -1,8 +1,10 @@
+# Paths are configured by reproducibility/run.R.
+if (!exists("repro_path", mode = "function")) stop("Run this script through reproducibility/run.R; see reproducibility/README.md.", call. = FALSE)
 
 
-source("/home/xz527/Rcode/knockoff_anno/KF_anno/KF_anno.R")
-source("/home/xz527/Rcode/knockoff_anno/GK_anno/GK_anno.R")
-source("/home/xz527/Rcode/knockoff_anno/GK_anno/GhostKnockoff.R")
+source(repro_path("annokn_source", "KF_anno.R"))
+source(repro_path("annogk_source", "GK_anno.R"))
+source(repro_path("annogk_source", "GhostKnockoff.R"))
 packageVersion("Matrix") 
 
 
@@ -28,7 +30,7 @@ lnc = FALSE
 
 
 library(data.table)
-annot_all = fread(paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/real_data/LDSC/data/GRCh38/baselineLD_v2.2/baselineLD.", 1, ".annot.gz"))
+annot_all = fread(paste0(repro_path("ldsc_annotations", "baselineLD."), 1, ".annot.gz"))
 
 cats = c("SNP", "Promoter_UCSC", "Enhancer_Hoffman", "Coding_UCSC", "TFBS_ENCODE")
 if(type == 1){
@@ -109,7 +111,7 @@ for(celltype in allcelltype){
     
     
     
-    gexp_path = paste0('/gpfs/gibbs/pi/zhao/jz874/jiazhao/Xiangyu/TWAS_fm/GTEx_Gene_expression_adjust_covariates/adjusted_expr_age_sex_',pc,'genopcs_5peers')
+    gexp_path = paste0(repro_path("gtex_expression", "adjusted_expr_age_sex_"),pc,'genopcs_5peers')
     
     directory_path <- paste(gexp_path, "/chr",chrid, sep="")
     # List all folders in the specified directory
@@ -153,7 +155,7 @@ for(celltype in allcelltype){
     # z$folder_names <- folder_names[index]
     # risk_gene <- z
     
-    path = paste0("/gpfs/gibbs/pi/zhao/xz527/AnnoKn_revision/4.5GTEx/gene_coor/chr_", chrid, "_ct_", celltype, ".txt")
+    path = paste0(repro_path("gtex_gene_coordinates", "chr_"), chrid, "_ct_", celltype, ".txt")
     risk_gene = fread(path)
     
     if(lnc == FALSE){
@@ -195,7 +197,7 @@ for(celltype in allcelltype){
     sum1 = c()
     sum2 = c()
     sum3 = c()
-    path = paste0("/gpfs/gibbs/pi/zhao/xz527/AnnoKn_revision/4.5GTEx/result_new/chr_", chrid, "_ct_", celltype, "_type_", type, ".RData")
+    path = paste0(repro_path("gtex_annotation_results", "chr_"), chrid, "_ct_", celltype, "_type_", type, ".RData")
     
     if (!file.exists(path)) {
       message("not exist: ", path)

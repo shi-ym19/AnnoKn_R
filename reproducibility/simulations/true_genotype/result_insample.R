@@ -1,3 +1,5 @@
+# Paths are configured by reproducibility/run.R.
+if (!exists("repro_path", mode = "function")) stop("Run this script through reproducibility/run.R; see reproducibility/README.md.", call. = FALSE)
 
 N.effect = 10000 # sample size
 n1 = 1000 # sample size used for clustering
@@ -21,7 +23,7 @@ lambda <- numeric()
 
 for (iter in 1:100) {
   
-  path = paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/ghostknockoff/simulation/UKBB_simu/result/result_", width, "_insample_iter_", iter, "_n_", N.effect, "_h2e_", h2e, "_alphae_", alphae, "_p1_", p1, "_M_", M, "_chr_", chrid, ".RData")
+  path = paste0(repro_path("true_genotype_legacy_results", "result_"), width, "_insample_iter_", iter, "_n_", N.effect, "_h2e_", h2e, "_alphae_", alphae, "_p1_", p1, "_M_", M, "_chr_", chrid, ".RData")
   load(path)
   
   power1 <- rbind(power1, result$power1)
@@ -201,7 +203,7 @@ for(h2e in c(0.02, 0.05, 0.1)){
   
   for (iter in 1:100) {
     
-    path = paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/ghostknockoff/simulation/UKBB_simu/result_new/result_", width, "_insample_iter_", iter, "_n_", N.effect, "_h2e_", h2e, "_alphae_", alphae, "_p1_", p1, "_M_", M, "_chr_", chrid, ".RData")
+    path = paste0(repro_path("true_genotype_paper_results", "result_"), width, "_insample_iter_", iter, "_n_", N.effect, "_h2e_", h2e, "_alphae_", alphae, "_p1_", p1, "_M_", M, "_chr_", chrid, ".RData")
     load(path)
     
     power1 <- rbind(power1, result$power1)
@@ -380,7 +382,7 @@ g <- g + geom_line(
 print(g)
 
 
-ggsave("/gpfs/gibbs/pi/zhao/xz527/annoKn_plots/AnnoGK_simu_true_genotype_insample.pdf", 
+ggsave(repro_path("plots", "AnnoGK_simu_true_genotype_insample.pdf"),
        g, 
        width = 9, height = 5, units = "in", 
        bg = "white", device = cairo_pdf)

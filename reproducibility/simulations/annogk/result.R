@@ -1,3 +1,5 @@
+# Paths are configured by reproducibility/run.R.
+if (!exists("repro_path", mode = "function")) stop("Run this script through reproducibility/run.R; see reproducibility/README.md.", call. = FALSE)
 library(ggplot2)
 
 iteration = 100
@@ -47,7 +49,7 @@ N.effect = 5000 #
 p = 300
 
 for (i in 1:iteration) {
-  path = paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/ghostknockoff/simulation/AnnoGK_simu/result/heri_final_10_",heri,"_n_",N.effect,"_p_",p, "_", i,".RData")
+  path = paste0(repro_path("annogk_results", "heri_final_10_"),heri,"_n_",N.effect,"_p_",p, "_", i,".RData")
   if (!file.exists(path)){
     print(paste("iteration",i,"doesn't exist"))
     removelist = append(removelist, i)
@@ -233,7 +235,7 @@ for (h in heri_list) {
   removelist <- c()
   
   for (i in 1:iteration) {
-    path <- paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/ghostknockoff/simulation/AnnoGK_simu/result/heri_final_10_",
+    path <- paste0(repro_path("annogk_results", "heri_final_10_"),
                    h, "_n_", 5000, "_p_", p, "_", i, ".RData")
     if (!file.exists(path)) {
       removelist <- c(removelist, i)
@@ -348,7 +350,7 @@ g <- g + geom_blank(
 
 print(g)
 
-ggsave("/gpfs/gibbs/pi/zhao/xz527/annoKn_plots/AnnoGK_simu_strong_p600.pdf", 
+ggsave(repro_path("plots", "AnnoGK_simu_strong_p600.pdf"),
        g, 
        width = 9, height = 5, units = "in", 
        bg = "white", device = cairo_pdf)
@@ -398,7 +400,7 @@ for (h in heri_list) {
   removelist <- c()
   
   for (i in 1:iteration) {
-    path <- paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/ghostknockoff/simulation/AnnoGK_simu/result/heri_final_10_binary_",
+    path <- paste0(repro_path("annogk_results", "heri_final_10_binary_"),
                    h, "_n_", 5000, "_p_", p, "_", i, ".RData")
     if (!file.exists(path)) {
       removelist <- c(removelist, i)
@@ -540,7 +542,7 @@ g <- g + geom_blank(
 
 print(g)
 
-ggsave("/gpfs/gibbs/pi/zhao/xz527/annoKn_plots/AnnoGK_simu_strong_binary_p300.pdf", 
+ggsave(repro_path("plots", "AnnoGK_simu_strong_binary_p300.pdf"),
        g, 
        width = 9, height = 5, units = "in", 
        bg = "white", device = cairo_pdf)
@@ -573,7 +575,7 @@ time1 <- time2 <- time3 <- time4 <- time5 <- time6 <- numeric()
 time7 <- time8 <- time9 <- time10 <- time11 <- numeric()
 
 for (i in 1:iteration) {
-  path <- paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/ghostknockoff/simulation/AnnoGK_simu/result/heri_final_10_",
+  path <- paste0(repro_path("annogk_results", "heri_final_10_"),
                  h, "_n_", 5000, "_p_", p, "_", i, ".RData")
   if (!file.exists(path)) {
     removelist <- c(removelist, i)
@@ -642,7 +644,7 @@ g <- ggplot(tmp_df, aes(x = method, y = time, fill = method)) +
 g
 
 
-ggsave("/gpfs/gibbs/pi/zhao/xz527/annoKn_plots/AnnoGK_simu_time_h0.1_p1000.pdf", 
+ggsave(repro_path("plots", "AnnoGK_simu_time_h0.1_p1000.pdf"),
        g, 
        width = 8, height = 5, units = "in", 
        bg = "white", device = cairo_pdf)

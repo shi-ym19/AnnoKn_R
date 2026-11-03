@@ -1,3 +1,5 @@
+# Paths are configured by reproducibility/run.R.
+if (!exists("repro_path", mode = "function")) stop("Run this script through reproducibility/run.R; see reproducibility/README.md.", call. = FALSE)
 
 
 
@@ -51,7 +53,7 @@ amp = 3.5
 binary = 'binary'
 
 for (i in 1:iteration) {
-  path = paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/knockoff/simulation/5dimen/result/result_randomposition_1_p_", num_noise+1, "_",binary, "_amp_",amp, "_", i,".RData")
+  path = paste0(repro_path("annokn_5d_results", "result_randomposition_1_p_"), num_noise+1, "_",binary, "_amp_",amp, "_", i,".RData")
   if (!file.exists(path)){
     print(paste("iteration",i,"doesn't exist"))
     removelist = append(removelist, i)
@@ -257,7 +259,7 @@ grid.newpage()
 grid.draw(g)
 
 
-ggsave("/gpfs/gibbs/pi/zhao/xz527/annoKn_plots/AnnoKn_5dimen_binary.pdf", 
+ggsave(repro_path("plots", "AnnoKn_5dimen_binary.pdf"),
        g, 
        width = 11, height = 4, units = "in", 
        bg = "white", device = cairo_pdf)
@@ -295,7 +297,7 @@ g <- ggplot(na.omit(df), aes(x = value, fill = group)) +
   labs(x = expression(lambda[l]), y = "Frequency", fill = "Group") +
   theme_minimal(base_size = 13)
 
-ggsave("/gpfs/gibbs/pi/zhao/xz527/annoKn_plots/Distribution_5dimen_continuous.pdf", 
+ggsave(repro_path("plots", "Distribution_5dimen_continuous.pdf"),
        g, 
        width = 10, height = 5, units = "in", 
        bg = "white", device = cairo_pdf)

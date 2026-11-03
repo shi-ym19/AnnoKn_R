@@ -6,7 +6,7 @@
 
 ## Paper reproducibility
 
-The [reproducibility directory](reproducibility/README.md) contains simulation and GTEx analysis scripts, with their intended execution order and corresponding manuscript figures and tables. These scripts are being prepared for reproducibility; see that directory's README for the remaining configuration and data requirements.
+The [reproducibility directory](reproducibility/README.md) integrates the original code archive, revision archive, and prior revision analyses: simulations, GTEx, Height, SCZ, and gene/region validation. See the [final figure/table coverage](reproducibility/FIGURE_TABLE_COVERAGE.md) and [data requirements](reproducibility/DATA_REQUIREMENTS.md) for execution order, agreement evidence, and remaining gaps. This is not yet a complete end-to-end manuscript reproduction workflow.
 
 ## Summary-statistic package (AnnoGKR)
 
@@ -42,7 +42,7 @@ if (!requireNamespace("remotes", quietly = TRUE)) {
 }
 
 # Install AnnoKn_R from GitHub
-remotes::install_github("zxy0912/AnnoKn_R")
+remotes::install_github("shi-ym19/AnnoKn_R", ref = "jasa-reproducibility")
 ```
 
 ## Quick Start

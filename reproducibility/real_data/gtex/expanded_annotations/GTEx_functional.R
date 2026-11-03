@@ -1,3 +1,5 @@
+# Paths are configured by reproducibility/run.R.
+if (!exists("repro_path", mode = "function")) stop("Run this script through reproducibility/run.R; see reproducibility/README.md.", call. = FALSE)
 
 #### note: for type 1 and type 2, we used the lams <- exp(seq(log(lambda)-1, log(lambda)+2, 0.1)), with more breaks and candidate lambda_0
 ### for type 3, the annotations dimensional is around 100, we try to use the lams <- exp(seq(log(lambda)-1, log(lambda)+2, 0.2)) to include less lambda_0?
@@ -9,9 +11,9 @@ options(stringsAsFactors=F)
 
 chrid = as.numeric(args[1])
 
-source("/home/xz527/Rcode/knockoff_anno/KF_anno/KF_anno.R")
-source("/home/xz527/Rcode/knockoff_anno/GK_anno/GK_anno.R")
-source("/home/xz527/Rcode/knockoff_anno/GK_anno/GhostKnockoff.R")
+source(repro_path("annokn_source", "KF_anno.R"))
+source(repro_path("annogk_source", "GK_anno.R"))
+source(repro_path("annogk_source", "GhostKnockoff.R"))
 packageVersion("Matrix") 
 
 # ################################## package for AdaKn ##########################################
@@ -30,14 +32,14 @@ packageVersion("Matrix")
 source_gitfile <- function(filename){
   source(sprintf("%s.R", filename))
 }
-file_vec <- c("/home/xz527/Rcode/knockoff_side/code//utils/all_other_methods",
-              "/home/xz527/Rcode/knockoff_side/code/utils/adaptive_knockoff",
-              "/home/xz527/Rcode/knockoff_side/code/utils/filter_EM",
-              "/home/xz527/Rcode/knockoff_side/code/utils/filter_gam",
-              "/home/xz527/Rcode/knockoff_side/code/utils/filter_glm",
-              "/home/xz527/Rcode/knockoff_side/code/utils/filter_randomForest",
-              "/home/xz527/Rcode/knockoff_side/code/utils/All_q_est_functions",
-              "/home/xz527/Rcode/knockoff_side/code/utils/accumulation_test_functions")
+file_vec <- c(repro_path("comparison_utils", "all_other_methods"),
+              repro_path("comparison_utils", "adaptive_knockoff"),
+              repro_path("comparison_utils", "filter_EM"),
+              repro_path("comparison_utils", "filter_gam"),
+              repro_path("comparison_utils", "filter_glm"),
+              repro_path("comparison_utils", "filter_randomForest"),
+              repro_path("comparison_utils", "All_q_est_functions"),
+              repro_path("comparison_utils", "accumulation_test_functions"))
 getfile <- sapply(file_vec,source_gitfile)
 # ############################################################################
 
@@ -72,7 +74,7 @@ celltype = "Lung"
 # "Brain_Cortex" "Lung" "Pancreas"
 print(celltype)
 
-gexp_path = paste0('/gpfs/gibbs/pi/zhao/jz874/jiazhao/Xiangyu/TWAS_fm/GTEx_Gene_expression_adjust_covariates/adjusted_expr_age_sex_',pc,'genopcs_5peers')
+gexp_path = paste0(repro_path("gtex_expression", "adjusted_expr_age_sex_"),pc,'genopcs_5peers')
 
 directory_path <- paste(gexp_path, "/chr",chrid, sep="")
 # List all folders in the specified directory
@@ -120,7 +122,7 @@ genes <- sub("\\..*", "", folder_names)
 # risk_gene <- z
 
 
-path = paste0("/gpfs/gibbs/pi/zhao/xz527/AnnoKn_revision/4.5GTEx/gene_coor/chr_", chrid, "_ct_", celltype, ".txt")
+path = paste0(repro_path("gtex_gene_coordinates", "chr_"), chrid, "_ct_", celltype, ".txt")
 risk_gene = fread(path)
 
 
@@ -162,7 +164,7 @@ if(maf == 0.05){
 }
 
 ancestry = 'EUR'
-path <- paste("/gpfs/gibbs/pi/zhao/xz527/TWAS_fm/real_data/GTEX/ancestry/",ancestry,"/", maf_dir, "/GTEX_chr", chrid,sep='')
+path <- paste(repro_path("gtex_plink", ""),ancestry,"/", maf_dir, "/GTEX_chr", chrid,sep='')
 gtex_chr <- read_plink(path)
 
 # snp_mart <- useEnsembl(
@@ -171,7 +173,7 @@ gtex_chr <- read_plink(path)
 # )
 
 
-annot_all = fread(paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/real_data/LDSC/data/GRCh38/baselineLD_v2.2/baselineLD.", chrid, ".annot.gz"))
+annot_all = fread(paste0(repro_path("ldsc_annotations", "baselineLD."), chrid, ".annot.gz"))
 
 cats = c("SNP", "Promoter_UCSC", "Enhancer_Hoffman", "Coding_UCSC", "TFBS_ENCODE")
 if(type == 1){
@@ -217,21 +219,21 @@ if(type == 1){
 }
 # cats = c("SNP","Coding_UCSC", "TSS_Hoffman", "Enhancer_Hoffman", 
 #          "Promoter_UCSC", "H3K27ac_Hnisz", "H3K4me1_peaks_Trynka")
-# annot = fread(paste0("/gpfs/gibbs/pi/zhao/cl2384/MESC_Genes/baselineLD_2.1/baselineLD.", chrid, ".annot.gz"))
+# annot = fread(paste0(repro_path("archived_ldsc_annotations", "baselineLD."), chrid, ".annot.gz"))
 annot_all = annot_all[, ..cats]
 
 ######################################################################################
-# path = paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/real_data/GTEx/ucsc_hg38/chr",chrid,".txt")
+# path = paste0(repro_path("gtex_variant_coordinates", "chr"),chrid,".txt")
 # ref_hg38 <- read.table(path, header = FALSE)
 # colnames(ref_hg38) <- c("chr", "start","end","snp")
 # 
 # ref_hg38_selected <- ref_hg38[ref_hg38$end %in% gtex_chr$bim$pos | ref_hg38$snp %in% annot_all$SNP,]
-# path = paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/real_data/GTEx/ucsc_hg38/chr",chrid,"_selected.txt")
+# path = paste0(repro_path("gtex_variant_coordinates", "chr"),chrid,"_selected.txt")
 # write.table(ref_hg38_selected, file = path, row.names = FALSE,
 #             col.names = TRUE, quote = FALSE)
 ######################################################################################
 
-path = paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/real_data/GTEx/ucsc_hg38/chr",chrid,"_selected.txt")
+path = paste0(repro_path("gtex_variant_coordinates", "chr"),chrid,"_selected.txt")
 ref_hg38 <- read.table(path, header = TRUE)
 
 
@@ -253,7 +255,7 @@ gene_i = 1
 
 
 
-# path = paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/real_data/GTEx/result_new_500k_enhancer/chr_", chrid, "_ct_", celltype, "_type_", type, ".RData")
+# path = paste0(repro_path("archived_gtex_results", "chr_"), chrid, "_ct_", celltype, "_type_", type, ".RData")
 all_result <- list()
 # save(all_result, file = path)
 
@@ -299,7 +301,7 @@ for(gene_i in 1:nrow(risk_gene)){
     # cat("variance of gene expression is 0:",
     #     "  chrid:", chrid, 
     #     "  gene:", gene_i, "\n", 
-    #     file = paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/real_data/GTEx/result_new_500k_enhancer/log_", celltype, ".txt"), 
+    #     file = paste0(repro_path("archived_gtex_results", "log_"), celltype, ".txt"),
     #     append = TRUE)
     next
   }
@@ -356,7 +358,7 @@ for(gene_i in 1:nrow(risk_gene)){
     # cat("number of SNP groups <= 10:",
     #     "  chrid:", chrid, 
     #     "  gene:", gene_i, "\n", 
-    #     file = paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/real_data/GTEx/result_new_500k_enhancer/log_", celltype, ".txt"), 
+    #     file = paste0(repro_path("archived_gtex_results", "log_"), celltype, ".txt"),
     #     append = TRUE)
     next
   }
@@ -487,7 +489,7 @@ for(gene_i in 1:nrow(risk_gene)){
       "AdaKn failed:",
       "  chrid:", chrid,
       "  gene:", gene_i, "\n",
-      file = paste0("/gpfs/gibbs/pi/zhao/xz527/AnnoKn_revision/4.5GTEx/log/log_", celltype, ".txt"),
+      file = paste0(repro_path("gtex_logs", "log_"), celltype, ".txt"),
       append = TRUE
     )
     NULL
@@ -551,7 +553,7 @@ for(gene_i in 1:nrow(risk_gene)){
   
 }
 
-path = paste0("/gpfs/gibbs/pi/zhao/xz527/AnnoKn_revision/4.5GTEx/result_new/chr_", chrid, "_ct_", celltype, "_type_", type, ".RData")
+path = paste0(repro_path("gtex_annotation_results", "chr_"), chrid, "_ct_", celltype, "_type_", type, ".RData")
 save(all_result, file = path)
 
 

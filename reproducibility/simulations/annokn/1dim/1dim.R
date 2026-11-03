@@ -1,3 +1,5 @@
+# Paths are configured by reproducibility/run.R.
+if (!exists("repro_path", mode = "function")) stop("Run this script through reproducibility/run.R; see reproducibility/README.md.", call. = FALSE)
 
 
 ######################### Simulation for n > p & 1 - dim ###########################
@@ -32,21 +34,21 @@ i <- args[1]
 source_gitfile <- function(filename){
   source(sprintf("%s.R", filename))
 }
-file_vec <- c("/home/xz527/Rcode/knockoff_side/code//utils/all_other_methods",
-              "/home/xz527/Rcode/knockoff_side/code/utils/adaptive_knockoff",
-              "/home/xz527/Rcode/knockoff_side/code/utils/filter_EM",
-              "/home/xz527/Rcode/knockoff_side/code/utils/filter_gam",
-              "/home/xz527/Rcode/knockoff_side/code/utils/filter_glm",
-              "/home/xz527/Rcode/knockoff_side/code/utils/filter_randomForest", 
-              "/home/xz527/Rcode/knockoff_side/code/utils/All_q_est_functions", 
-              "/home/xz527/Rcode/knockoff_side/code/utils/accumulation_test_functions")
+file_vec <- c(repro_path("comparison_utils", "all_other_methods"),
+              repro_path("comparison_utils", "adaptive_knockoff"),
+              repro_path("comparison_utils", "filter_EM"),
+              repro_path("comparison_utils", "filter_gam"),
+              repro_path("comparison_utils", "filter_glm"),
+              repro_path("comparison_utils", "filter_randomForest"),
+              repro_path("comparison_utils", "All_q_est_functions"),
+              repro_path("comparison_utils", "accumulation_test_functions"))
 getfile <- sapply(file_vec,source_gitfile)
 
 
 
-source("/home/xz527/Rcode/knockoff_anno/KF_anno/KF_anno.R")
-#source("/home/xz527/Rcode/knockoff_side/knockoff_side/issue_1/knockoff_anno.R")
-# source("/home/cl2667/Anno/EM.R")
+source(repro_path("annokn_source", "KF_anno.R"))
+#source(repro_path("archived_knockoff_source", "knockoff_anno.R"))
+# source(repro_path("archived_em_source", "EM.R"))
 # suppressMessages(library("knockoff"))
 # suppressMessages(library("SNPknock"))
 # suppressMessages(library("glmnet"))
@@ -341,7 +343,7 @@ for(binary in c('','binary')){
                 time8 = time8)
   
   
-  path = paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/knockoff/simulation/1dimen/result/result_", binary, "_amp_",amp, "_", i,".RData")
+  path = paste0(repro_path("annokn_1d_results", "result_"), binary, "_amp_",amp, "_", i,".RData")
   
   dir <- dirname(path)
   if (!dir.exists(dir)) {

@@ -1,3 +1,5 @@
+# Paths are configured by reproducibility/run.R.
+if (!exists("repro_path", mode = "function")) stop("Run this script through reproducibility/run.R; see reproducibility/README.md.", call. = FALSE)
 
 
 library(ggplot2)
@@ -41,7 +43,7 @@ amp = 3.5
 binary = ''
 
 for (i in 1:iteration) {
-  path = paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/knockoff/simulation/1dimen/result/result_", binary, "_amp_",amp, "_", i,".RData")
+  path = paste0(repro_path("annokn_1d_results", "result_"), binary, "_amp_",amp, "_", i,".RData")
   if (!file.exists(path)){
     print(paste("iteration",i,"doesn't exist"))
     removelist = append(removelist, i)
@@ -240,8 +242,8 @@ library(grid)
 grid.newpage()
 grid.draw(g)
 
-ggsave("/gpfs/gibbs/pi/zhao/xz527/annoKn_plots/AnnoKn_AdaKn_setting_continuous.pdf", 
-# ggsave("/gpfs/gibbs/pi/zhao/xz527/annoKn_plots/AnnoKn_AdaKn_setting_binary.pdf", 
+ggsave(repro_path("plots", "AnnoKn_AdaKn_setting_continuous.pdf"),
+# ggsave(repro_path("plots", "AnnoKn_AdaKn_setting_binary.pdf"),
        g, 
        width = 10, height = 4, units = "in", 
        bg = "white", device = cairo_pdf)
@@ -270,7 +272,7 @@ g <- ggplot(df, aes(x = method, y = time, fill = method)) +
 
 g
 
-ggsave("/gpfs/gibbs/pi/zhao/xz527/annoKn_plots/AnnoKn_AdaKn_time_continuous.pdf", 
+ggsave(repro_path("plots", "AnnoKn_AdaKn_time_continuous.pdf"),
        g, 
        width = 6, height = 5, units = "in", 
        bg = "white", device = cairo_pdf)

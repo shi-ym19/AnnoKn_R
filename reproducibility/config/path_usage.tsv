@@ -1,0 +1,495 @@
+script	repository_line	key	relative	commented
+real_data/gtex/expanded_annotations/GTEx_functional.R	14	annokn_source	KF_anno.R	False
+real_data/gtex/expanded_annotations/GTEx_functional.R	15	annogk_source	GK_anno.R	False
+real_data/gtex/expanded_annotations/GTEx_functional.R	16	annogk_source	GhostKnockoff.R	False
+real_data/gtex/expanded_annotations/GTEx_functional.R	35	comparison_utils	all_other_methods	False
+real_data/gtex/expanded_annotations/GTEx_functional.R	36	comparison_utils	adaptive_knockoff	False
+real_data/gtex/expanded_annotations/GTEx_functional.R	37	comparison_utils	filter_EM	False
+real_data/gtex/expanded_annotations/GTEx_functional.R	38	comparison_utils	filter_gam	False
+real_data/gtex/expanded_annotations/GTEx_functional.R	39	comparison_utils	filter_glm	False
+real_data/gtex/expanded_annotations/GTEx_functional.R	40	comparison_utils	filter_randomForest	False
+real_data/gtex/expanded_annotations/GTEx_functional.R	41	comparison_utils	All_q_est_functions	False
+real_data/gtex/expanded_annotations/GTEx_functional.R	42	comparison_utils	accumulation_test_functions	False
+real_data/gtex/expanded_annotations/GTEx_functional.R	77	gtex_expression	adjusted_expr_age_sex_	False
+real_data/gtex/expanded_annotations/GTEx_functional.R	125	gtex_gene_coordinates	chr_	False
+real_data/gtex/expanded_annotations/GTEx_functional.R	167	gtex_plink		False
+real_data/gtex/expanded_annotations/GTEx_functional.R	176	ldsc_annotations	baselineLD.	False
+real_data/gtex/expanded_annotations/GTEx_functional.R	222	archived_ldsc_annotations	baselineLD.	True
+real_data/gtex/expanded_annotations/GTEx_functional.R	226	gtex_variant_coordinates	chr	True
+real_data/gtex/expanded_annotations/GTEx_functional.R	231	gtex_variant_coordinates	chr	True
+real_data/gtex/expanded_annotations/GTEx_functional.R	236	gtex_variant_coordinates	chr	False
+real_data/gtex/expanded_annotations/GTEx_functional.R	258	archived_gtex_results	chr_	True
+real_data/gtex/expanded_annotations/GTEx_functional.R	304	archived_gtex_results	log_	True
+real_data/gtex/expanded_annotations/GTEx_functional.R	361	archived_gtex_results	log_	True
+real_data/gtex/expanded_annotations/GTEx_functional.R	492	gtex_logs	log_	False
+real_data/gtex/expanded_annotations/GTEx_functional.R	556	gtex_annotation_results	chr_	False
+real_data/gtex/expanded_annotations/GTEx_result.R	5	annokn_source	KF_anno.R	False
+real_data/gtex/expanded_annotations/GTEx_result.R	6	annogk_source	GK_anno.R	False
+real_data/gtex/expanded_annotations/GTEx_result.R	7	annogk_source	GhostKnockoff.R	False
+real_data/gtex/expanded_annotations/GTEx_result.R	33	ldsc_annotations	baselineLD.	False
+real_data/gtex/expanded_annotations/GTEx_result.R	114	gtex_expression	adjusted_expr_age_sex_	False
+real_data/gtex/expanded_annotations/GTEx_result.R	158	gtex_gene_coordinates	chr_	False
+real_data/gtex/expanded_annotations/GTEx_result.R	200	gtex_annotation_results	chr_	False
+real_data/gtex/null_diagnostics/GTEx_check.R	17	annokn_source	KF_anno.R	False
+real_data/gtex/null_diagnostics/GTEx_check.R	18	annogk_source	GK_anno.R	False
+real_data/gtex/null_diagnostics/GTEx_check.R	19	annogk_source	GhostKnockoff.R	False
+real_data/gtex/null_diagnostics/GTEx_check.R	38	comparison_utils	all_other_methods	True
+real_data/gtex/null_diagnostics/GTEx_check.R	39	comparison_utils	adaptive_knockoff	True
+real_data/gtex/null_diagnostics/GTEx_check.R	40	comparison_utils	filter_EM	True
+real_data/gtex/null_diagnostics/GTEx_check.R	41	comparison_utils	filter_gam	True
+real_data/gtex/null_diagnostics/GTEx_check.R	42	comparison_utils	filter_glm	True
+real_data/gtex/null_diagnostics/GTEx_check.R	43	comparison_utils	filter_randomForest	True
+real_data/gtex/null_diagnostics/GTEx_check.R	44	comparison_utils	All_q_est_functions	True
+real_data/gtex/null_diagnostics/GTEx_check.R	45	comparison_utils	accumulation_test_functions	True
+real_data/gtex/null_diagnostics/GTEx_check.R	76	gtex_expression	adjusted_expr_age_sex_	False
+real_data/gtex/null_diagnostics/GTEx_check.R	124	gtex_null_gene_coordinates	chr_	False
+real_data/gtex/null_diagnostics/GTEx_check.R	166	gtex_plink		False
+real_data/gtex/null_diagnostics/GTEx_check.R	175	ldsc_annotations	baselineLD.	False
+real_data/gtex/null_diagnostics/GTEx_check.R	221	archived_ldsc_annotations	baselineLD.	True
+real_data/gtex/null_diagnostics/GTEx_check.R	225	gtex_variant_coordinates	chr	True
+real_data/gtex/null_diagnostics/GTEx_check.R	230	gtex_variant_coordinates	chr	True
+real_data/gtex/null_diagnostics/GTEx_check.R	235	gtex_variant_coordinates	chr	False
+real_data/gtex/null_diagnostics/GTEx_check.R	257	archived_gtex_results	chr_	True
+real_data/gtex/null_diagnostics/GTEx_check.R	548	gtex_null_results	chr_	False
+real_data/gtex/null_diagnostics/GTEx_check.R	550	gtex_null_results	chr_simu_	False
+real_data/gtex/null_diagnostics/GTEx_check.R	554	gtex_null_results	knockoff_chr_	False
+real_data/gtex/null_diagnostics/GTEx_check.R	556	gtex_null_results	knockoff_chr_simu_	False
+real_data/gtex/null_diagnostics/GTEx_check.R	560	gtex_null_results	annokn_chr_	False
+real_data/gtex/null_diagnostics/GTEx_check.R	562	gtex_null_results	annokn_chr_simu_	False
+real_data/gtex/null_diagnostics/result.R	45	gtex_null_results	knockoff_chr_	False
+real_data/gtex/null_diagnostics/result.R	47	gtex_null_results	knockoff_chr_simu_	False
+real_data/gtex/null_diagnostics/result.R	51	gtex_null_results	annokn_chr_	False
+real_data/gtex/null_diagnostics/result.R	53	gtex_null_results	annokn_chr_simu_	False
+real_data/gtex/null_diagnostics/result.R	87	revision_plots	GTEx4.1/null_distribution.pdf	False
+real_data/gtex/null_diagnostics/result.R	140	revision_plots	GTEx4.1/null_proportion.pdf	False
+real_data/gtex/revision/diagnostic_pancreas.R	16	annokn_source	KF_anno.R	True
+real_data/gtex/revision/diagnostic_pancreas.R	17	annogk_source	GK_anno.R	True
+real_data/gtex/revision/diagnostic_pancreas.R	18	annogk_source	GhostKnockoff.R	True
+real_data/gtex/revision/diagnostic_pancreas.R	65	gtex_expression	adjusted_expr_age_sex_	False
+real_data/gtex/revision/diagnostic_pancreas.R	66	gtex_diagnostic_expression	adjusted_expr_age_sex_	False
+real_data/gtex/revision/diagnostic_pancreas.R	116	gtex_gene_metadata	chr_	True
+real_data/gtex/revision/diagnostic_pancreas.R	130	gtex_gene_coordinates	chr_	False
+real_data/gtex/revision/diagnostic_pancreas.R	173	gtex_plink		False
+real_data/gtex/revision/diagnostic_pancreas.R	181	ldsc_annotations	baselineLD.	False
+real_data/gtex/revision/diagnostic_pancreas.R	229	archived_ldsc_annotations	baselineLD.	True
+real_data/gtex/revision/diagnostic_pancreas.R	233	gtex_variant_coordinates	chr	True
+real_data/gtex/revision/diagnostic_pancreas.R	238	gtex_variant_coordinates	chr	True
+real_data/gtex/revision/diagnostic_pancreas.R	243	gtex_variant_coordinates	chr	False
+real_data/gtex/revision/diagnostic_pancreas.R	265	archived_gtex_results	chr_	True
+real_data/gtex/revision/diagnostic_pancreas.R	311	gtex_revision_logs	log_	False
+real_data/gtex/revision/diagnostic_pancreas.R	368	gtex_revision_logs	log_	False
+real_data/gtex/revision/diagnostic_pancreas.R	537	gtex_revision_results	chr_	True
+real_data/gtex/revision/export_specific_genes.R	3	annokn_source	KF_anno.R	True
+real_data/gtex/revision/export_specific_genes.R	4	annogk_source	GK_anno.R	True
+real_data/gtex/revision/export_specific_genes.R	5	annogk_source	GhostKnockoff.R	True
+real_data/gtex/revision/export_specific_genes.R	47	ldsc_annotations	baselineLD.	False
+real_data/gtex/revision/export_specific_genes.R	128	gtex_expression	adjusted_expr_age_sex_	True
+real_data/gtex/revision/export_specific_genes.R	211	gtex_revision_results	chr_	False
+real_data/gtex/revision/export_specific_genes.R	315	gtex_specific_gene_exports		False
+real_data/gtex/revision/fit_annotations.R	15	annokn_source	KF_anno.R	True
+real_data/gtex/revision/fit_annotations.R	16	annogk_source	GK_anno.R	True
+real_data/gtex/revision/fit_annotations.R	17	annogk_source	GhostKnockoff.R	True
+real_data/gtex/revision/fit_annotations.R	64	gtex_expression	adjusted_expr_age_sex_	False
+real_data/gtex/revision/fit_annotations.R	113	gtex_gene_metadata	chr_	True
+real_data/gtex/revision/fit_annotations.R	127	gtex_gene_coordinates	chr_	False
+real_data/gtex/revision/fit_annotations.R	170	gtex_plink		False
+real_data/gtex/revision/fit_annotations.R	178	ldsc_annotations	baselineLD.	False
+real_data/gtex/revision/fit_annotations.R	226	archived_ldsc_annotations	baselineLD.	True
+real_data/gtex/revision/fit_annotations.R	230	gtex_variant_coordinates	chr	True
+real_data/gtex/revision/fit_annotations.R	235	gtex_variant_coordinates	chr	True
+real_data/gtex/revision/fit_annotations.R	240	gtex_variant_coordinates	chr	False
+real_data/gtex/revision/fit_annotations.R	262	archived_gtex_results	chr_	True
+real_data/gtex/revision/fit_annotations.R	308	gtex_revision_logs	log_	False
+real_data/gtex/revision/fit_annotations.R	365	gtex_revision_logs	log_	False
+real_data/gtex/revision/fit_annotations.R	534	gtex_revision_results	chr_	False
+real_data/gtex/revision/summarize_annotations.R	3	annokn_source	KF_anno.R	True
+real_data/gtex/revision/summarize_annotations.R	4	annogk_source	GK_anno.R	True
+real_data/gtex/revision/summarize_annotations.R	5	annogk_source	GhostKnockoff.R	True
+real_data/gtex/revision/summarize_annotations.R	44	ldsc_annotations	baselineLD.	False
+real_data/gtex/revision/summarize_annotations.R	125	gtex_expression	adjusted_expr_age_sex_	True
+real_data/gtex/revision/summarize_annotations.R	205	gtex_revision_results	chr_	False
+real_data/gtex/validation/GTEx_functional.R	2	gtex_validation_workspace		False
+real_data/gtex/validation/GTEx_functional.R	18	annokn_source	KF_anno.R	True
+real_data/gtex/validation/GTEx_functional.R	19	annogk_source	GK_anno.R	True
+real_data/gtex/validation/GTEx_functional.R	20	annogk_source	GhostKnockoff.R	True
+real_data/gtex/validation/GTEx_functional.R	68	gtex_expression	adjusted_expr_age_sex_	True
+real_data/gtex/validation/GTEx_functional.R	69	gtex_expression	adjusted_expr_age_sex_	False
+real_data/gtex/validation/GTEx_functional.R	119	gtex_validation_workspace	test.txt	True
+real_data/gtex/validation/GTEx_functional.R	120	gtex_gene_metadata	chr_	True
+real_data/gtex/validation/GTEx_functional.R	134	gtex_gene_coordinates	chr_	True
+real_data/gtex/validation/GTEx_functional.R	135	gtex_validation_workspace	gene_coor/chr_	False
+real_data/gtex/validation/GTEx_functional.R	178	gtex_plink		True
+real_data/gtex/validation/GTEx_functional.R	179	gtex_plink		False
+real_data/gtex/validation/GTEx_functional.R	187	ldsc_annotations	baselineLD.	True
+real_data/gtex/validation/GTEx_functional.R	188	ldsc_annotations	baselineLD.	False
+real_data/gtex/validation/GTEx_functional.R	238	archived_ldsc_annotations	baselineLD.	True
+real_data/gtex/validation/GTEx_functional.R	242	gtex_variant_coordinates	chr	True
+real_data/gtex/validation/GTEx_functional.R	247	gtex_variant_coordinates	chr	True
+real_data/gtex/validation/GTEx_functional.R	252	gtex_variant_coordinates	chr	True
+real_data/gtex/validation/GTEx_functional.R	253	gtex_variant_coordinates	chr	False
+real_data/gtex/validation/GTEx_functional.R	275	archived_gtex_results	chr_	True
+real_data/gtex/validation/GTEx_functional.R	322	gtex_validation_workspace	new_seed/log/log_	False
+real_data/gtex/validation/GTEx_functional.R	379	gtex_validation_workspace	new_seed/log/log_	False
+real_data/gtex/validation/GTEx_functional.R	548	gtex_revision_results	chr_	True
+real_data/gtex/validation/GTEx_functional.R	549	gtex_validation_workspace	result/chr_	True
+real_data/gtex/validation/GTEx_functional.R	550	gtex_validation_workspace	result_removetfbs/chr_	True
+real_data/gtex/validation/GTEx_functional.R	551	gtex_validation_workspace	new_seed/result/chr_	False
+real_data/gtex/validation/audit_gtex_annokn_only_egenes.py	7	gtex_validation_workspace		False
+real_data/gtex/validation/audit_gtex_annokn_only_seed_stability.R	2	gtex_validation_workspace		False
+real_data/gtex/validation/audit_gtex_method_specific_egenes.py	12	gtex_validation_workspace		False
+real_data/gtex/validation/audit_independent_eqtl_catalogue.py	7	gtex_validation_workspace		False
+real_data/gtex/validation/compare_gtex_method_specific_overlap.R	2	gtex_validation_workspace		False
+real_data/gtex/validation/extract_gtex_annokn_only_egenes.R	2	gtex_validation_workspace		False
+real_data/gtex/validation/promoter/GTEx_functional.R	2	gtex_validation_workspace		False
+real_data/gtex/validation/promoter/GTEx_functional.R	18	annokn_source	KF_anno.R	True
+real_data/gtex/validation/promoter/GTEx_functional.R	19	annogk_source	GK_anno.R	True
+real_data/gtex/validation/promoter/GTEx_functional.R	20	annogk_source	GhostKnockoff.R	True
+real_data/gtex/validation/promoter/GTEx_functional.R	68	gtex_expression	adjusted_expr_age_sex_	True
+real_data/gtex/validation/promoter/GTEx_functional.R	69	gtex_expression	adjusted_expr_age_sex_	False
+real_data/gtex/validation/promoter/GTEx_functional.R	119	gtex_validation_workspace	test.txt	True
+real_data/gtex/validation/promoter/GTEx_functional.R	120	gtex_gene_metadata	chr_	True
+real_data/gtex/validation/promoter/GTEx_functional.R	134	gtex_gene_coordinates	chr_	True
+real_data/gtex/validation/promoter/GTEx_functional.R	135	gtex_validation_workspace	gene_coor/chr_	False
+real_data/gtex/validation/promoter/GTEx_functional.R	178	gtex_plink		True
+real_data/gtex/validation/promoter/GTEx_functional.R	179	gtex_plink		False
+real_data/gtex/validation/promoter/GTEx_functional.R	187	ldsc_annotations	baselineLD.	True
+real_data/gtex/validation/promoter/GTEx_functional.R	188	ldsc_annotations	baselineLD.	False
+real_data/gtex/validation/promoter/GTEx_functional.R	238	archived_ldsc_annotations	baselineLD.	True
+real_data/gtex/validation/promoter/GTEx_functional.R	242	gtex_variant_coordinates	chr	True
+real_data/gtex/validation/promoter/GTEx_functional.R	247	gtex_variant_coordinates	chr	True
+real_data/gtex/validation/promoter/GTEx_functional.R	252	gtex_variant_coordinates	chr	True
+real_data/gtex/validation/promoter/GTEx_functional.R	253	gtex_variant_coordinates	chr	False
+real_data/gtex/validation/promoter/GTEx_functional.R	275	archived_gtex_results	chr_	True
+real_data/gtex/validation/promoter/GTEx_functional.R	322	gtex_validation_workspace	new_seed/log_promoter/log_	False
+real_data/gtex/validation/promoter/GTEx_functional.R	379	gtex_validation_workspace	new_seed/log_promoter/log_	False
+real_data/gtex/validation/promoter/GTEx_functional.R	548	gtex_revision_results	chr_	True
+real_data/gtex/validation/promoter/GTEx_functional.R	549	gtex_validation_workspace	result/chr_	True
+real_data/gtex/validation/promoter/GTEx_functional.R	550	gtex_validation_workspace	result_removetfbs/chr_	True
+real_data/gtex/validation/promoter/GTEx_functional.R	551	gtex_validation_workspace	new_seed/result_promoter/chr_	False
+real_data/gtex/validation/summarize_old_method_specific_new_seed_retention.py	7	gtex_validation_workspace		False
+real_data/height/revision/fit_additional_seeds.R	10	annokn_source	KF_anno.R	True
+real_data/height/revision/fit_additional_seeds.R	11	annogk_source	GK_anno.R	True
+real_data/height/revision/fit_additional_seeds.R	12	annogk_source	GhostKnockoff.R	True
+real_data/height/revision/fit_additional_seeds.R	69	height_gwas	GIANT_HEIGHT_YENGO_2022_GWAS_SUMMARY_STATS_	False
+real_data/height/revision/fit_additional_seeds.R	83	height_gwas	GIANT_HEIGHT_YENGO_2022_GWAS_SUMMARY_STATS_	False
+real_data/height/revision/fit_additional_seeds.R	111	cross_ancestry_plink	bychr_	False
+real_data/height/revision/fit_additional_seeds.R	118	archived_ldsc_annotations	baselineLD.	True
+real_data/height/revision/fit_additional_seeds.R	155	height_ten_regions		False
+real_data/height/revision/fit_additional_seeds.R	160	height_ten_regions		False
+real_data/height/revision/fit_additional_seeds.R	365	archived_height_results		True
+real_data/height/revision/fit_additional_seeds.R	366	height_ten_results		False
+real_data/height/revision/fit_single.R	10	annokn_source	KF_anno.R	True
+real_data/height/revision/fit_single.R	11	annogk_source	GK_anno.R	True
+real_data/height/revision/fit_single.R	12	annogk_source	GhostKnockoff.R	True
+real_data/height/revision/fit_single.R	69	height_gwas	GIANT_HEIGHT_YENGO_2022_GWAS_SUMMARY_STATS_	False
+real_data/height/revision/fit_single.R	83	height_gwas	GIANT_HEIGHT_YENGO_2022_GWAS_SUMMARY_STATS_	False
+real_data/height/revision/fit_single.R	111	cross_ancestry_plink	bychr_	False
+real_data/height/revision/fit_single.R	118	archived_ldsc_annotations	baselineLD.	True
+real_data/height/revision/fit_single.R	155	height_single_regions		False
+real_data/height/revision/fit_single.R	160	height_single_regions		False
+real_data/height/revision/fit_single.R	365	archived_height_results		True
+real_data/height/revision/fit_single.R	366	height_single_results		False
+real_data/height/revision/summarize_single.R	10	height_single_regions		False
+real_data/height/revision/summarize_single.R	36	plots	annoGk/Height_risk_region.pdf	True
+real_data/height/revision/summarize_single.R	71	height_single_results		False
+real_data/height/revision/summarize_single.R	103	height_single_results		False
+real_data/height/revision/summarize_single.R	208	plots	annoGk/Height_lambda.pdf	True
+real_data/height/revision/summarize_single.R	250	plots	annoGk/Height_eur_venn.pdf	True
+real_data/height/revision/summarize_single.R	298	plots	annoGk/Height_afr_venn.pdf	True
+real_data/height/revision/summarize_ten_runs.R	10	height_ten_regions		False
+real_data/height/revision/summarize_ten_runs.R	36	plots	annoGk/Height_risk_region.pdf	True
+real_data/height/revision/summarize_ten_runs.R	71	height_ten_results		False
+real_data/height/revision/summarize_ten_runs.R	103	height_ten_results		False
+real_data/height/revision/summarize_ten_runs.R	214	plots	annoGk/Height_lambda.pdf	True
+real_data/height/revision/summarize_ten_runs.R	256	plots	annoGk/Height_eur_venn.pdf	True
+real_data/height/revision/summarize_ten_runs.R	304	plots	annoGk/Height_afr_venn.pdf	True
+real_data/height/revision/summarize_ten_runs.R	386	height_ten_results		False
+real_data/height/revision/summarize_ten_runs.R	425	height_ten_results		False
+real_data/height/revision/summarize_ten_runs.R	559	height_plots	Height_lambda.pdf	False
+real_data/height/revision/summarize_ten_runs.R	602	height_plots	Height_eur_venn.pdf	False
+real_data/height/revision/summarize_ten_runs.R	640	height_plots	Height_afr_venn.pdf	False
+real_data/height/revision/summarize_ten_runs.R	701	height_ten_results		False
+real_data/height/revision/summarize_ten_runs.R	733	height_ten_results		False
+real_data/height/revision/summarize_ten_runs.R	815	height_plots	repetition.pdf	False
+real_data/height/revision/variants/reviewer2_4_summary.R	10	height_ten_regions		False
+real_data/height/revision/variants/reviewer2_4_summary.R	36	plots	annoGk/Height_risk_region.pdf	True
+real_data/height/revision/variants/reviewer2_4_summary.R	71	height_ten_results		False
+real_data/height/revision/variants/reviewer2_4_summary.R	103	height_ten_results		False
+real_data/height/revision/variants/reviewer2_4_summary.R	214	plots	annoGk/Height_lambda.pdf	True
+real_data/height/revision/variants/reviewer2_4_summary.R	256	plots	annoGk/Height_eur_venn.pdf	True
+real_data/height/revision/variants/reviewer2_4_summary.R	304	plots	annoGk/Height_afr_venn.pdf	True
+real_data/height/revision/variants/reviewer2_4_summary.R	376	height_ten_results		False
+real_data/height/revision/variants/reviewer2_4_summary.R	413	height_ten_results		False
+real_data/height/revision/variants/reviewer2_4_summary.R	501	height_plots	Height_lambda.pdf	False
+real_data/height/revision/variants/reviewer2_4_summary.R	544	height_plots	Height_eur_venn.pdf	False
+real_data/height/revision/variants/reviewer2_4_summary.R	582	height_plots	Height_afr_venn.pdf	False
+real_data/height/revision/variants/reviewer2_4_summary.R	643	height_ten_results		False
+real_data/height/revision/variants/reviewer2_4_summary.R	675	height_ten_results		False
+real_data/height/revision/variants/reviewer2_4_summary.R	757	height_plots	repetition.pdf	False
+real_data/height/revision/variants/reviewer2_5_summary.R	10	height_single_regions		False
+real_data/height/revision/variants/reviewer2_5_summary.R	36	plots	annoGk/Height_risk_region.pdf	True
+real_data/height/revision/variants/reviewer2_5_summary.R	71	height_single_results		False
+real_data/height/revision/variants/reviewer2_5_summary.R	103	height_single_results		False
+real_data/height/revision/variants/reviewer2_5_summary.R	208	plots	annoGk/Height_lambda.pdf	True
+real_data/height/revision/variants/reviewer2_5_summary.R	250	plots	annoGk/Height_eur_venn.pdf	True
+real_data/height/revision/variants/reviewer2_5_summary.R	298	plots	annoGk/Height_afr_venn.pdf	True
+real_data/height/revision/variants/reviewer2_5_summary.R	369	height_ten_results		False
+real_data/height/revision/variants/reviewer2_5_summary.R	406	height_ten_results		False
+real_data/height/validation/analyze_height_all10_genecards_topN_sensitivity.R	14	height_validation_workspace		False
+real_data/height/validation/build_height_annogk_only_gene_evidence.py	8	height_validation_workspace		False
+real_data/height/validation/compare_height_eur_all10_ng_height202.py	17	height_validation_workspace		False
+real_data/height/validation/count_height_eur_all10_genecards_topN.py	9	height_validation_workspace		False
+real_data/height/validation/extract_height_eur_ten_seed_stable_regions.R	10	height_validation_workspace		False
+real_data/height/validation/extract_height_ten_seed_stable_regions.R	7	height_validation_workspace	annot_pvalus/result	False
+real_data/height/validation/extract_height_ten_seed_stable_regions.R	11	height_validation_workspace	height_ten_seed_region_stability_q0p1	False
+real_data/height/validation/extract_ng_height_supported_genes.py	18	height_validation_workspace		False
+real_data/height/validation/height_result.R	10	height_ten_regions		False
+real_data/height/validation/height_result.R	36	plots	annoGk/Height_risk_region.pdf	True
+real_data/height/validation/height_result.R	71	height_ten_results		False
+real_data/height/validation/height_result.R	103	height_ten_results		False
+real_data/height/validation/height_result.R	214	plots	annoGk/Height_lambda.pdf	True
+real_data/height/validation/height_result.R	256	plots	annoGk/Height_eur_venn.pdf	True
+real_data/height/validation/height_result.R	304	plots	annoGk/Height_afr_venn.pdf	True
+real_data/height/validation/height_result.R	376	height_ten_results		False
+real_data/height/validation/height_result.R	413	height_ten_results		False
+real_data/height/validation/height_result.R	488	height_plots	Height_eur_venn.pdf	False
+real_data/height/validation/height_result.R	526	height_plots	Height_afr_venn.pdf	False
+real_data/height/validation/height_result.R	587	height_ten_results		False
+real_data/height/validation/height_result.R	619	height_ten_results		False
+real_data/height/validation/height_result.R	701	height_plots	repetition.pdf	False
+real_data/height/validation/map_genecards_height_top1000_to_hg19.R	16	height_validation_workspace		False
+real_data/height/validation/map_genecards_height_top500_to_hg19.R	16	height_validation_workspace		False
+real_data/height/validation/map_height_all10_regions_to_genecards_top1000.R	12	height_validation_workspace		False
+real_data/height/validation/map_height_all10_regions_to_genecards_top500.R	12	height_validation_workspace		False
+real_data/height/validation/map_height_all10_regions_to_genes.R	16	height_validation_workspace		False
+real_data/scz/revision/fit_baseline_subset.R	11	annokn_source	KF_anno.R	True
+real_data/scz/revision/fit_baseline_subset.R	12	annogk_source	GK_anno.R	True
+real_data/scz/revision/fit_baseline_subset.R	13	annogk_source	GhostKnockoff.R	True
+real_data/scz/revision/fit_baseline_subset.R	66	scz_gwas		False
+real_data/scz/revision/fit_baseline_subset.R	76	scz_gwas		False
+real_data/scz/revision/fit_baseline_subset.R	111	cross_ancestry_plink	bychr_	False
+real_data/scz/revision/fit_baseline_subset.R	113	cross_ancestry_plink	bychr_	False
+real_data/scz/revision/fit_baseline_subset.R	121	archived_ldsc_annotations	baselineLD.	True
+real_data/scz/revision/fit_baseline_subset.R	158	archived_scz_regions		True
+real_data/scz/revision/fit_baseline_subset.R	164	scz_candidate_regions		False
+real_data/scz/revision/fit_baseline_subset.R	366	scz_baseline_results		False
+real_data/scz/revision/fit_four_methods.R	8	annokn_source	KF_anno.R	True
+real_data/scz/revision/fit_four_methods.R	9	annogk_source	GK_anno.R	True
+real_data/scz/revision/fit_four_methods.R	10	annogk_source	GhostKnockoff.R	True
+real_data/scz/revision/fit_four_methods.R	53	revision_helpers	filter_gam.R	False
+real_data/scz/revision/fit_four_methods.R	75	scz_gwas		False
+real_data/scz/revision/fit_four_methods.R	85	scz_gwas		False
+real_data/scz/revision/fit_four_methods.R	122	cross_ancestry_plink	bychr_	False
+real_data/scz/revision/fit_four_methods.R	124	cross_ancestry_plink	bychr_	False
+real_data/scz/revision/fit_four_methods.R	132	archived_ldsc_annotations	baselineLD.	True
+real_data/scz/revision/fit_four_methods.R	169	archived_scz_regions		True
+real_data/scz/revision/fit_four_methods.R	175	scz_candidate_regions		False
+real_data/scz/revision/fit_four_methods.R	462	scz_four_method_results		True
+real_data/scz/revision/fit_four_methods.R	463	scz_four_method_results		False
+real_data/scz/revision/summarize_baseline.R	44	scz_baseline_results		False
+real_data/scz/revision/summarize_baseline.R	77	scz_baseline_results		False
+real_data/scz/revision/summarize_baseline.R	386	scz_baseline_results		False
+real_data/scz/revision/summarize_baseline.R	417	scz_baseline_results		False
+real_data/scz/revision/summarize_four_methods.R	57	scz_four_method_results		True
+real_data/scz/revision/summarize_four_methods.R	58	scz_four_method_results		False
+real_data/scz/revision/summarize_four_methods.R	107	scz_four_method_results		True
+real_data/scz/revision/summarize_four_methods.R	108	scz_four_method_results		False
+real_data/scz/revision/summarize_four_methods.R	443	scz_baseline_results		False
+real_data/scz/revision/summarize_four_methods.R	474	scz_baseline_results		False
+real_data/scz/validation/compare_first10_union_gene_panels.py	8	scz_validation_workspace		False
+real_data/scz/validation/compare_schema_silver_standard.py	11	scz_validation_workspace		False
+real_data/scz/validation/compare_schema_silver_standard.py	14	height_validation_workspace	reference/gencode.v19.annotation.gtf.gz	False
+real_data/scz/validation/map_scz_genecards_relevance_gt10.py	14	scz_validation_workspace		False
+real_data/scz/validation/map_scz_genecards_relevance_gt10.py	15	height_validation_workspace	reference	False
+real_data/scz/validation/summarize_scz_first10_regions.R	3	scz_validation_workspace	result	False
+real_data/scz/validation/summarize_scz_seed_regions.R	6	scz_validation_workspace	result	False
+simulations/annogk/binary.R	12	annokn_source	KF_anno.R	False
+simulations/annogk/binary.R	13	annogk_source	GK_anno.R	False
+simulations/annogk/binary.R	14	annogk_source	GhostKnockoff.R	False
+simulations/annogk/binary.R	20	comparison_utils	all_other_methods	True
+simulations/annogk/binary.R	21	comparison_utils	adaptive_knockoff	True
+simulations/annogk/binary.R	22	comparison_utils	filter_EM	True
+simulations/annogk/binary.R	23	comparison_utils	filter_gam	True
+simulations/annogk/binary.R	24	comparison_utils	filter_glm	True
+simulations/annogk/binary.R	25	comparison_utils	filter_randomForest	True
+simulations/annogk/binary.R	26	comparison_utils	All_q_est_functions	True
+simulations/annogk/binary.R	27	comparison_utils	accumulation_test_functions	True
+simulations/annogk/binary.R	462	annogk_results	heri_final_10_binary_	False
+simulations/annogk/binary.R	463	annogk_results	heri_final_10_weak_binary_	True
+simulations/annogk/continuous.R	10	annokn_source	KF_anno.R	False
+simulations/annogk/continuous.R	11	annogk_source	GK_anno.R	False
+simulations/annogk/continuous.R	12	annogk_source	GhostKnockoff.R	False
+simulations/annogk/continuous.R	18	comparison_utils	all_other_methods	True
+simulations/annogk/continuous.R	19	comparison_utils	adaptive_knockoff	True
+simulations/annogk/continuous.R	20	comparison_utils	filter_EM	True
+simulations/annogk/continuous.R	21	comparison_utils	filter_gam	True
+simulations/annogk/continuous.R	22	comparison_utils	filter_glm	True
+simulations/annogk/continuous.R	23	comparison_utils	filter_randomForest	True
+simulations/annogk/continuous.R	24	comparison_utils	All_q_est_functions	True
+simulations/annogk/continuous.R	25	comparison_utils	accumulation_test_functions	True
+simulations/annogk/continuous.R	458	annogk_results	heri_final_10_	False
+simulations/annogk/continuous.R	459	annogk_results	heri_final_10_weak_	True
+simulations/annogk/result.R	52	annogk_results	heri_final_10_	False
+simulations/annogk/result.R	238	annogk_results	heri_final_10_	False
+simulations/annogk/result.R	353	plots	AnnoGK_simu_strong_p600.pdf	False
+simulations/annogk/result.R	403	annogk_results	heri_final_10_binary_	False
+simulations/annogk/result.R	545	plots	AnnoGK_simu_strong_binary_p300.pdf	False
+simulations/annogk/result.R	578	annogk_results	heri_final_10_	False
+simulations/annogk/result.R	647	plots	AnnoGK_simu_time_h0.1_p1000.pdf	False
+simulations/annokn/1dim/1dim.R	37	comparison_utils	all_other_methods	False
+simulations/annokn/1dim/1dim.R	38	comparison_utils	adaptive_knockoff	False
+simulations/annokn/1dim/1dim.R	39	comparison_utils	filter_EM	False
+simulations/annokn/1dim/1dim.R	40	comparison_utils	filter_gam	False
+simulations/annokn/1dim/1dim.R	41	comparison_utils	filter_glm	False
+simulations/annokn/1dim/1dim.R	42	comparison_utils	filter_randomForest	False
+simulations/annokn/1dim/1dim.R	43	comparison_utils	All_q_est_functions	False
+simulations/annokn/1dim/1dim.R	44	comparison_utils	accumulation_test_functions	False
+simulations/annokn/1dim/1dim.R	49	annokn_source	KF_anno.R	False
+simulations/annokn/1dim/1dim.R	50	archived_knockoff_source	knockoff_anno.R	True
+simulations/annokn/1dim/1dim.R	51	archived_em_source	EM.R	True
+simulations/annokn/1dim/1dim.R	346	annokn_1d_results	result_	False
+simulations/annokn/1dim/1dim_result.R	46	annokn_1d_results	result_	False
+simulations/annokn/1dim/1dim_result.R	245	plots	AnnoKn_AdaKn_setting_continuous.pdf	False
+simulations/annokn/1dim/1dim_result.R	246	plots	AnnoKn_AdaKn_setting_binary.pdf	True
+simulations/annokn/1dim/1dim_result.R	275	plots	AnnoKn_AdaKn_time_continuous.pdf	False
+simulations/annokn/2dim/2dim.R	15	comparison_utils	all_other_methods	False
+simulations/annokn/2dim/2dim.R	16	comparison_utils	adaptive_knockoff	False
+simulations/annokn/2dim/2dim.R	17	comparison_utils	filter_EM	False
+simulations/annokn/2dim/2dim.R	18	comparison_utils	filter_gam	False
+simulations/annokn/2dim/2dim.R	19	comparison_utils	filter_glm	False
+simulations/annokn/2dim/2dim.R	20	comparison_utils	filter_randomForest	False
+simulations/annokn/2dim/2dim.R	21	comparison_utils	All_q_est_functions	False
+simulations/annokn/2dim/2dim.R	22	comparison_utils	accumulation_test_functions	False
+simulations/annokn/2dim/2dim.R	25	annokn_source	KF_anno.R	False
+simulations/annokn/2dim/2dim.R	337	annokn_2d_results	result_	False
+simulations/annokn/2dim/2dim_result.R	4	revision_plots	AnnoKn_2dim_type.pdf	False
+simulations/annokn/2dim/2dim_result.R	90	annokn_2d_results	result_	False
+simulations/annokn/2dim/2dim_result.R	221	revision_plots	AnnoKn_2dim_	False
+simulations/annokn/2dim/2dim_result.R	253	annokn_2d_timing_results	result_	False
+simulations/annokn/2dim/2dim_result.R	322	revision_plots	AnnoKn_2dim_time_continuous.pdf	False
+simulations/annokn/5dim/5dim.R	39	comparison_utils	all_other_methods	False
+simulations/annokn/5dim/5dim.R	40	comparison_utils	adaptive_knockoff	False
+simulations/annokn/5dim/5dim.R	41	comparison_utils	filter_EM	False
+simulations/annokn/5dim/5dim.R	42	comparison_utils	filter_gam	False
+simulations/annokn/5dim/5dim.R	43	comparison_utils	filter_glm	False
+simulations/annokn/5dim/5dim.R	44	comparison_utils	filter_randomForest	False
+simulations/annokn/5dim/5dim.R	45	comparison_utils	All_q_est_functions	False
+simulations/annokn/5dim/5dim.R	46	comparison_utils	accumulation_test_functions	False
+simulations/annokn/5dim/5dim.R	51	annokn_source	KF_anno.R	False
+simulations/annokn/5dim/5dim.R	52	archived_knockoff_source	knockoff_anno.R	True
+simulations/annokn/5dim/5dim.R	53	archived_em_source	EM.R	True
+simulations/annokn/5dim/5dim.R	457	annokn_5d_results	result_randomposition_1_p_	False
+simulations/annokn/5dim/5dim_result.R	56	annokn_5d_results	result_randomposition_1_p_	False
+simulations/annokn/5dim/5dim_result.R	262	plots	AnnoKn_5dimen_binary.pdf	False
+simulations/annokn/5dim/5dim_result.R	300	plots	Distribution_5dimen_continuous.pdf	False
+simulations/annotation_dependence/1dim.R	28	revision_helpers	filter_gam.R	False
+simulations/annotation_dependence/1dim.R	29	revision_helpers	filter_glm.R	False
+simulations/annotation_dependence/1dim.R	30	revision_helpers	filter_EM.R	False
+simulations/annotation_dependence/1dim.R	31	revision_helpers	filter_randomForest.R	False
+simulations/annotation_dependence/1dim.R	357	annotation_dependence_results	result_	False
+simulations/annotation_dependence/1dim_indep.R	28	revision_helpers	filter_gam.R	False
+simulations/annotation_dependence/1dim_indep.R	29	revision_helpers	filter_glm.R	False
+simulations/annotation_dependence/1dim_indep.R	30	revision_helpers	filter_EM.R	False
+simulations/annotation_dependence/1dim_indep.R	31	revision_helpers	filter_randomForest.R	False
+simulations/annotation_dependence/1dim_indep.R	361	annotation_dependence_results	result_indep_	False
+simulations/annotation_dependence/1dim_indep_result.R	46	annotation_dependence_results	result_indep_	False
+simulations/annotation_dependence/1dim_indep_result.R	266	annotation_dependence_plots	AnnoKn_indep_setting_selected.pdf	False
+simulations/annotation_dependence/1dim_indep_result.R	267	plots	AnnoKn_AdaKn_setting_binary.pdf	True
+simulations/annotation_dependence/1dim_indep_result.R	296	plots	AnnoKn_AdaKn_time_continuous.pdf	False
+simulations/annotation_dependence/1dim_result.R	46	annotation_dependence_results	result_	False
+simulations/annotation_dependence/1dim_result.R	269	annotation_dependence_plots	AnnoKn_setting_selected.pdf	False
+simulations/annotation_dependence/1dim_result.R	270	plots	AnnoKn_AdaKn_setting_binary.pdf	True
+simulations/annotation_dependence/1dim_result.R	299	plots	AnnoKn_AdaKn_time_continuous.pdf	False
+simulations/hybrid/1dim.R	28	revision_helpers	filter_gam.R	False
+simulations/hybrid/1dim.R	29	revision_helpers	filter_glm.R	False
+simulations/hybrid/1dim.R	30	revision_helpers	filter_EM.R	False
+simulations/hybrid/1dim.R	31	revision_helpers	filter_randomForest.R	False
+simulations/hybrid/1dim.R	353	hybrid_results	result_	False
+simulations/hybrid/1dim_result.R	49	hybrid_results	result_	False
+simulations/hybrid/1dim_result.R	261	hybrid_plots	AnnoKn_AdaKn_setting_continuous.pdf	False
+simulations/hybrid/1dim_result.R	262	plots	AnnoKn_AdaKn_setting_binary.pdf	True
+simulations/hybrid/1dim_result.R	291	hybrid_plots	AnnoKn_AdaKn_time_continuous.pdf	False
+simulations/summary_adakn/binary.R	9	annokn_source	KF_anno.R	True
+simulations/summary_adakn/binary.R	10	annogk_source	GK_anno.R	True
+simulations/summary_adakn/binary.R	11	annogk_source	GhostKnockoff.R	True
+simulations/summary_adakn/binary.R	24	revision_helpers	filter_gam.R	False
+simulations/summary_adakn/binary.R	25	revision_helpers	filter_glm.R	False
+simulations/summary_adakn/binary.R	26	revision_helpers	filter_EM.R	False
+simulations/summary_adakn/binary.R	27	revision_helpers	filter_randomForest.R	False
+simulations/summary_adakn/binary.R	355	summary_adakn_results	heri_final_10_binary_	False
+simulations/summary_adakn/binary.R	356	annogk_results	heri_final_10_weak_	True
+simulations/summary_adakn/continuous.R	9	annokn_source	KF_anno.R	True
+simulations/summary_adakn/continuous.R	10	annogk_source	GK_anno.R	True
+simulations/summary_adakn/continuous.R	11	annogk_source	GhostKnockoff.R	True
+simulations/summary_adakn/continuous.R	28	revision_helpers	filter_gam.R	False
+simulations/summary_adakn/continuous.R	29	revision_helpers	filter_glm.R	False
+simulations/summary_adakn/continuous.R	30	revision_helpers	filter_EM.R	False
+simulations/summary_adakn/continuous.R	31	revision_helpers	filter_randomForest.R	False
+simulations/summary_adakn/continuous.R	48	comparison_utils	all_other_methods	True
+simulations/summary_adakn/continuous.R	49	comparison_utils	adaptive_knockoff	True
+simulations/summary_adakn/continuous.R	50	comparison_utils	filter_EM	True
+simulations/summary_adakn/continuous.R	51	comparison_utils	filter_gam	True
+simulations/summary_adakn/continuous.R	52	comparison_utils	filter_glm	True
+simulations/summary_adakn/continuous.R	53	comparison_utils	filter_randomForest	True
+simulations/summary_adakn/continuous.R	54	comparison_utils	All_q_est_functions	True
+simulations/summary_adakn/continuous.R	55	comparison_utils	accumulation_test_functions	True
+simulations/summary_adakn/continuous.R	376	summary_adakn_results	heri_final_10_	False
+simulations/summary_adakn/continuous.R	377	annogk_results	heri_final_10_weak_	True
+simulations/summary_adakn/result.R	43	summary_adakn_results	heri_final_10_	False
+simulations/summary_adakn/result.R	210	summary_adakn_results	heri_final_10_	False
+simulations/summary_adakn/result.R	322	summary_adakn_plots	AnnoGK_simu_strong_p	False
+simulations/summary_adakn/result.R	372	summary_adakn_results	heri_final_10_binary_	False
+simulations/summary_adakn/result.R	511	plots	AnnoGK_simu_strong_binary_p300.pdf	False
+simulations/summary_adakn/result.R	544	annogk_results	heri_final_10_	False
+simulations/summary_adakn/result.R	613	plots	AnnoGK_simu_time_h0.1_p1000.pdf	False
+simulations/transfer_learning/numerical_experiments_new_example.R	12	revision_helpers	transfer_functions.R	False
+simulations/transfer_learning/numerical_experiments_new_example.R	186	transfer_results	new_output_	False
+simulations/transfer_learning/numerical_experiments_synthetic_data.R	15	revision_helpers	transfer_functions.R	False
+simulations/transfer_learning/numerical_experiments_synthetic_data.R	182	transfer_results	output	True
+simulations/transfer_learning/numerical_experiments_synthetic_data.R	185	transfer_results	output_	False
+simulations/transfer_learning/plot_results.R	15	transfer_results	output_	False
+simulations/transfer_learning/plot_results.R	16	transfer_results	output	True
+simulations/transfer_learning/plot_results.R	120	transfer_results	output_	False
+simulations/transfer_learning/plot_results.R	196	transfer_plots	benchmark.pdf	False
+simulations/transfer_learning/plot_results_new_example.R	16	transfer_results	new_output_	False
+simulations/transfer_learning/plot_results_new_example.R	98	transfer_results	new_output_	False
+simulations/transfer_learning/plot_results_new_example.R	120	transfer_results	new_output_	False
+simulations/transfer_learning/plot_results_new_example.R	188	transfer_plots	diff_overlap.pdf	False
+simulations/transfer_learning/plot_results_new_example.R	234	transfer_plots	lambda.pdf	False
+simulations/true_genotype/result_external.R	26	true_genotype_legacy_results	result_	False
+simulations/true_genotype/result_external.R	211	true_genotype_paper_results	result_	False
+simulations/true_genotype/result_external.R	392	plots	AnnoGK_simu_true_genotype_external.pdf	False
+simulations/true_genotype/result_insample.R	26	true_genotype_legacy_results	result_	False
+simulations/true_genotype/result_insample.R	206	true_genotype_paper_results	result_	False
+simulations/true_genotype/result_insample.R	385	plots	AnnoGK_simu_true_genotype_insample.pdf	False
+simulations/true_genotype/simu_external.R	14	annokn_source	KF_anno.R	False
+simulations/true_genotype/simu_external.R	15	annogk_source	GK_anno.R	False
+simulations/true_genotype/simu_external.R	16	annogk_source	GhostKnockoff.R	False
+simulations/true_genotype/simu_external.R	26	comparison_utils	all_other_methods	False
+simulations/true_genotype/simu_external.R	27	comparison_utils	adaptive_knockoff	False
+simulations/true_genotype/simu_external.R	28	comparison_utils	filter_EM	False
+simulations/true_genotype/simu_external.R	29	comparison_utils	filter_gam	False
+simulations/true_genotype/simu_external.R	30	comparison_utils	filter_glm	False
+simulations/true_genotype/simu_external.R	31	comparison_utils	filter_randomForest	False
+simulations/true_genotype/simu_external.R	32	comparison_utils	All_q_est_functions	False
+simulations/true_genotype/simu_external.R	33	comparison_utils	accumulation_test_functions	False
+simulations/true_genotype/simu_external.R	79	ukbb		False
+simulations/true_genotype/simu_external.R	82	ukbb	EUR_0.05maf/real_simulation/region_information/chr	False
+simulations/true_genotype/simu_external.R	85	ukbb	EUR/fourier_ls-all.bed	False
+simulations/true_genotype/simu_external.R	90	reference_plink	1KG_chr	False
+simulations/true_genotype/simu_external.R	513	true_genotype_legacy_results	result_external_iter_	False
+simulations/true_genotype/simu_insample.R	12	annokn_source	KF_anno.R	False
+simulations/true_genotype/simu_insample.R	13	annogk_source	GK_anno.R	False
+simulations/true_genotype/simu_insample.R	14	annogk_source	GhostKnockoff.R	False
+simulations/true_genotype/simu_insample.R	24	comparison_utils	all_other_methods	False
+simulations/true_genotype/simu_insample.R	25	comparison_utils	adaptive_knockoff	False
+simulations/true_genotype/simu_insample.R	26	comparison_utils	filter_EM	False
+simulations/true_genotype/simu_insample.R	27	comparison_utils	filter_gam	False
+simulations/true_genotype/simu_insample.R	28	comparison_utils	filter_glm	False
+simulations/true_genotype/simu_insample.R	29	comparison_utils	filter_randomForest	False
+simulations/true_genotype/simu_insample.R	30	comparison_utils	All_q_est_functions	False
+simulations/true_genotype/simu_insample.R	31	comparison_utils	accumulation_test_functions	False
+simulations/true_genotype/simu_insample.R	77	ukbb		False
+simulations/true_genotype/simu_insample.R	80	ukbb	EUR_0.05maf/real_simulation/region_information/chr	False
+simulations/true_genotype/simu_insample.R	83	ukbb	EUR/fourier_ls-all.bed	False
+simulations/true_genotype/simu_insample.R	459	true_genotype_legacy_results	result_insample_iter_	False

@@ -1,3 +1,5 @@
+# Paths are configured by reproducibility/run.R.
+if (!exists("repro_path", mode = "function")) stop("Run this script through reproducibility/run.R; see reproducibility/README.md.", call. = FALSE)
 
 args = commandArgs(trailingOnly=TRUE)
 options(stringsAsFactors=F)
@@ -7,9 +9,9 @@ iter <- args[1]
 
 seed = 1234*iter
 
-source("/home/xz527/Rcode/knockoff_anno/KF_anno/KF_anno.R")
-source("/home/xz527/Rcode/knockoff_anno/GK_anno/GK_anno.R")
-source("/home/xz527/Rcode/knockoff_anno/GK_anno/GhostKnockoff.R")
+source(repro_path("annokn_source", "KF_anno.R"))
+source(repro_path("annogk_source", "GK_anno.R"))
+source(repro_path("annogk_source", "GhostKnockoff.R"))
 packageVersion("Matrix") 
 
 
@@ -19,14 +21,14 @@ packageVersion("Matrix")
 source_gitfile <- function(filename){
   source(sprintf("%s.R", filename))
 }
-file_vec <- c("/home/xz527/Rcode/knockoff_side/code/utils/all_other_methods",
-              "/home/xz527/Rcode/knockoff_side/code/utils/adaptive_knockoff",
-              "/home/xz527/Rcode/knockoff_side/code/utils/filter_EM",
-              "/home/xz527/Rcode/knockoff_side/code/utils/filter_gam",
-              "/home/xz527/Rcode/knockoff_side/code/utils/filter_glm",
-              "/home/xz527/Rcode/knockoff_side/code/utils/filter_randomForest",
-              "/home/xz527/Rcode/knockoff_side/code/utils/All_q_est_functions",
-              "/home/xz527/Rcode/knockoff_side/code/utils/accumulation_test_functions")
+file_vec <- c(repro_path("comparison_utils", "all_other_methods"),
+              repro_path("comparison_utils", "adaptive_knockoff"),
+              repro_path("comparison_utils", "filter_EM"),
+              repro_path("comparison_utils", "filter_gam"),
+              repro_path("comparison_utils", "filter_glm"),
+              repro_path("comparison_utils", "filter_randomForest"),
+              repro_path("comparison_utils", "All_q_est_functions"),
+              repro_path("comparison_utils", "accumulation_test_functions"))
 getfile <- sapply(file_vec,source_gitfile)
 
 
@@ -72,13 +74,13 @@ len = length(fdr_seq)
 #### load the information for each risk region
 ancestry = 'EUR'
 chrid = '1'
-path <- paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/real_data/UKBB/",ancestry,"_0.05maf/bychr/chr_",chrid,"_2w_common")
+path <- paste0(repro_path("ukbb", ""),ancestry,"_0.05maf/bychr/chr_",chrid,"_2w_common")
 genotype <- read_plink(path)
 
-snp_number = read.table(file = paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/real_data/UKBB/EUR_0.05maf/real_simulation/region_information/chr", chrid,"_common.txt"))
+snp_number = read.table(file = paste0(repro_path("ukbb", "EUR_0.05maf/real_simulation/region_information/chr"), chrid,"_common.txt"))
 good_iter <- which(snp_number$V3 > 100)
 
-ld_block <- read.table("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/real_data/UKBB/EUR/fourier_ls-all.bed", header = TRUE)
+ld_block <- read.table(repro_path("ukbb", "EUR/fourier_ls-all.bed"), header = TRUE)
 ld_block = ld_block[ld_block$chr == paste0("chr", chrid),]
 
 
@@ -454,7 +456,7 @@ for(h2e in c(0.05, 0.1, 0.2)){
                    X = X,
                    y = y,
                    Xk = X_tilde)
-    path = paste0("/gpfs/gibbs/pi/zhao/xz527/knockoff_anno/ghostknockoff/simulation/UKBB_simu/result/result_insample_iter_", iter, "_n_", N.effect, "_h2e_", h2e, "_alphae_", alphae, "_p1_", p1, "_M_", M, "_chr_", chrid, ".RData")
+    path = paste0(repro_path("true_genotype_legacy_results", "result_insample_iter_"), iter, "_n_", N.effect, "_h2e_", h2e, "_alphae_", alphae, "_p1_", p1, "_M_", M, "_chr_", chrid, ".RData")
     
     save(result, file = path)
     
