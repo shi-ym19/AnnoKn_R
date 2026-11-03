@@ -89,9 +89,9 @@ Paths below are relative to this directory.
 
 | Directory | Generate or fit first | Summarize or plot afterwards | Final-manuscript correspondence and qualifications |
 | --- | --- | --- | --- |
-| [`simulations/annokn/1dim/`](simulations/annokn/1dim/) | `1dim.R` | `1dim_result.R` | Main Figure 1; S1; S12 left panel. HMM design matches the manuscript; reader uses 150 repetitions versus the manuscript's 100. Switch annotation type and export name for S1. |
+| [`simulations/annokn/1dim/`](simulations/annokn/1dim/) | `1dim.R` | `1dim_result.R` | Main Figure 1; S1; S12 left panel. HMM design matches the manuscript; reader searches IDs 1..150, removes missing-file rows and summarizes only the first 100 retained runs, matching the manuscript count. Freeze the actual selected IDs. Switch annotation type and export name for S1. |
 | [`simulations/annokn/2dim/`](simulations/annokn/2dim/) | `2dim.R` | `2dim_result.R` | S2–S4; S12 right panel. The spatial covariance matches supplement Section S4.2; Section S5.1 instead describes i.i.d. entries. Switch annotation type for S4. S2 plotting needs explicit initialization of `k`, `p`, and the seed. |
-| [`simulations/annokn/5dim/`](simulations/annokn/5dim/) | `5dim.R` | `5dim_result.R` | S8–S11. Reader uses 120 repetitions versus 100 in Section S5.3; select continuous/binary annotations for each pair of figures and correct the export names. |
+| [`simulations/annokn/5dim/`](simulations/annokn/5dim/) | `5dim.R` | `5dim_result.R` | S8–S11. Reader searches IDs 1..120 but slices power/FDR/lambda arrays to 100 retained runs, matching Section S5.3; select continuous/binary annotations for each pair of figures and correct the export names. |
 | [`simulations/annogk/`](simulations/annogk/) | `continuous.R`, `binary.R` | `result.R` | Main Figure 2 (`p=1000`); S13–S14 (continuous, `p=300,600`); S18–S20 (binary, `p=300,600,1000`); S23 (runtime). Plotting defaults are continuous `p=600` and binary `p=300`; repeat with the other values and distinct export names. These scripts do not generate S15–S17's AdaKn comparison. |
 | [`simulations/true_genotype/`](simulations/true_genotype/) | `simu_insample.R`, `simu_external.R` | `result_insample.R`, `result_external.R`, respectively | S21–S22 are intended targets, but the imported producers do not match the final experiment: region definition, causal count, heritability grid, output names, and external-LD shrinkage require reconciliation. |
 | [`real_data/gtex/null_diagnostics/`](real_data/gtex/null_diagnostics/) | `GTEx_check.R` | `result.R` | S30–S31 / response Figures 13–14 use real genotypes; S32–S33 / response Figures 15–16 use simulated genotypes. Both use permuted expression and skeletal muscle. Generator currently selects adipose tissue; both scripts default to simulated genotypes. Configure tissue/mode and separate export names. |
@@ -99,10 +99,10 @@ Paths below are relative to this directory.
 
 ### Specific issues to resolve before reproduction
 
-- **Runtime S12:** the 1D reader loads 150 runs but labels its timing data using `each=100`. Reconcile the run count and labels before plotting; do not assume the current defaults produce the published timing panel.
+- **Runtime S12:** the 1D reader truncates its timing vectors to 100 entries, consistently with `each=100`. Searching result IDs up to 150 does not imply aggregating 150 runs. Freeze the selected file list and verify the 2D historical timing inputs and runtime environment.
 - **True-genotype S21–S22:** Section S5.5 specifies 2 Mb windows, 30 causal representatives from the first 100, and `h2={0.02,0.05,0.1}`. Imported generators use LD-block coordinates, `alphae*p` causal representatives, and `h2={0.05,0.1,0.2}`. Readers expect `2MB` result filenames that those producers do not write. The external producer uses `0.1*I + 0.9*LD`, whereas the manuscript and reader specify shrinkage 0.2.
 - **GTEx all-annotation results:** select `type=3` in both fitting and summary scripts, verify the resulting annotation columns, run all ten tissues and both FDR thresholds, and supply the missing gain plot (S35) and enrichment analysis/plot (S36). The directory name does not determine the active annotation setting.
-- **Simulation aggregation:** several readers initialize missing runs to zero and continue when a result file is absent. Validate the complete expected run set before summarizing; otherwise missing output can silently affect means.
+- **Simulation aggregation:** missing-file handling must be checked per reader. The 1D and 5D readers remove missing-file rows before taking their first 100 retained results; they do not average those missing rows as zeros. Freeze selected IDs and ensure enough readable results before summarizing.
 
 ### Newly integrated revision modules
 

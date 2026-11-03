@@ -14,11 +14,11 @@ All script paths below are relative to `reproducibility/` and are launched with 
 
 ## Simulation inputs and outputs
 
-Synthetic simulation drivers generate their own genotype/annotation/outcome data. Their readers require the full set of saved replicate files for each parameter combination. Some historical readers skip missing files while leaving zeros in aggregation arrays: validate the expected run set before using their summaries.
+Synthetic simulation drivers generate their own genotype/annotation/outcome data. Their readers require the full set of saved replicate files for each parameter combination. Missing-file handling differs by reader. The 1D and 5D readers remove missing-file rows and use the first 100 retained results; their search limits (150/120) are not the aggregation count. Validate the selected file IDs and ensure enough readable results.
 
 | Module | Run first | Run afterwards | Required inputs / configuration |
 | --- | --- | --- | --- |
-| Original AnnoKn/AnnoGK | Generators under `simulations/annokn/` and `simulations/annogk/` | Corresponding result scripts | Historical sources/comparators; annotation mode, parameter grids, replicate sets; 1D/5D repetition differences remain documented |
+| Original AnnoKn/AnnoGK | Generators under `simulations/annokn/` and `simulations/annogk/` | Corresponding result scripts | Historical sources/comparators; annotation mode, parameter grids, replicate sets; 1D/5D first-100-retained file lists must be frozen |
 | Annotation dependence | `annotation_dependence/1dim.R`, `1dim_indep.R` | Corresponding `_result.R` | AnnoKn and comparison dependencies; separate dependent/independent files |
 | Transfer | `transfer_learning/numerical_experiments_synthetic_data.R`, `numerical_experiments_new_example.R` | `plot_results.R`, `plot_results_new_example.R` | Bundled transfer helper; homogeneous filename suffix conflict (`error=""` vs `"corrected"`); heterogeneous single/all annotation settings |
 | Summary AdaKn | `summary_adakn/continuous.R`, `binary.R` | `result.R` | p=300/600/1000; annotation modes. Its result slots differ from the older DSS comparison: do not mix files |
