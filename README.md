@@ -4,6 +4,10 @@
 
 ---
 
+## Paper reproducibility
+
+The [reproducibility directory](reproducibility/README.md) contains simulation and GTEx analysis scripts, with their intended execution order and corresponding manuscript figures and tables. These scripts are being prepared for reproducibility; see that directory's README for the remaining configuration and data requirements.
+
 ## Summary-statistic package (AnnoGKR)
 
 The independent [AnnoGKR package](software/AnnoGKR/README.md) is included under
