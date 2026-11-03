@@ -1,5 +1,7 @@
 # Final figure and table coverage
 
+For the detailed Chinese inventory in final-PDF order, see [中文版逐图逐表说明](FIGURE_TABLE_COVERAGE_ZH.md).
+
 Audit date: 2026-11-03. All 94 numbered items in the final main paper, supplement and response are listed below. Paths are relative to `reproducibility/`. A code match is not a successful end-to-end reproduction. `saved_*_match_only` refers to the prior audit of saved outputs, not a new model fit.
 
 For inputs and workspace layouts see [DATA_REQUIREMENTS.md](DATA_REQUIREMENTS.md); for machine-readable details see [figure_table_map.tsv](figure_table_map.tsv).

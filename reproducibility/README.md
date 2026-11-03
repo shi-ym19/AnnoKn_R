@@ -1,5 +1,7 @@
 # Paper reproducibility
 
+中文逐图逐表说明：[最终稿每张图/表的代码、一致性与数据要求](FIGURE_TABLE_COVERAGE_ZH.md)（按 PDF 出现顺序，含正文、补充材料及回复信对应关系）。
+
 These scripts are being prepared for reproducibility; they are not yet a complete, ready-to-run manuscript reproduction workflow. External dependencies and input/output paths still need to be configured.
 
 The AnnoKn implementation is in the repository's `R/` directory. The separately installable AnnoGKR package, including `GK_anno_dss()`, is in [`software/AnnoGKR/`](../software/AnnoGKR/README.md). This analysis directory is excluded from R package builds through `.Rbuildignore` and remains available in the GitHub repository.
