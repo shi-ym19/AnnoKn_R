@@ -1,7 +1,7 @@
 key	root	relative_path	description	expected_content
-annokn_source	source	annokn	Frozen historical AnnoKn function source; not bundled	KF_anno.R
-annogk_source	source	annogk	Frozen historical AnnoGK/GhostKnockoff sources; not bundled	GK_anno.R; GhostKnockoff.R
-comparison_utils	source	comparison_utils	Historical comparator helpers; keep the original version	all_other_methods.R; adaptive_knockoff.R; filter_EM.R; filter_gam.R; filter_glm.R; filter_randomForest.R; All_q_est_functions.R; accumulation_test_functions.R
+annokn_source	repository	helpers/legacy/annokn	Bundled historical source snapshot used by the legacy analysis drivers; distinct from package/revision versions	KF_anno.R
+annogk_source	repository	helpers/legacy/annogk	Bundled historical source snapshot used by the legacy analysis drivers; distinct from package/revision versions	GK_anno.R; GhostKnockoff.R
+comparison_utils	repository	helpers/legacy/comparison_utils	Bundled historical source snapshot used by the legacy analysis drivers; distinct from package/revision versions	all_other_methods.R; adaptive_knockoff.R; filter_EM.R; filter_gam.R; filter_glm.R; filter_randomForest.R; All_q_est_functions.R; accumulation_test_functions.R
 gtex_expression	data	gtex/expression	Covariate-adjusted gene expression	adjusted_expr_age_sex_<pc>genopcs_5peers/chr<chr>/<gene>/<tissue>.adj_expr
 gtex_plink	data	gtex/ancestry	GTEx genotype PLINK roots by ancestry and MAF	<ancestry>/<MAF directory>/GTEX_chr<chr>.bed/.bim/.fam
 gtex_null_gene_coordinates	data	gtex/null_gene_coordinates	Gene coordinates for null diagnostics	chr_<chr>_ct_<tissue>.txt

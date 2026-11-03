@@ -8,24 +8,23 @@ The AnnoKn implementation is in the repository's `R/` directory. The separately 
 
 ## Import status and remaining preparation
 
-The three code sources are integrated: `code_xiangyu.zip` (17 original scripts), `AnnoKn_revisionv1.zip` (38 R files plus environment notes), and 29 scripts from the prior revision workspace. Identical copies share a canonical destination; 85 source records map to 78 distinct files. The [source manifest](source_manifest.tsv) records original and current SHA-256 hashes and every source-to-destination mapping. The empty `adakn_gam.R` supplied in the archive is retained as a placeholder, not an implementation.
+The three code sources are integrated: `code_xiangyu.zip` (17 original scripts), `AnnoKn_revisionv1.zip` (38 R files plus environment notes), and 29 scripts from the prior revision workspace. Identical copies share a canonical destination; The initial integration maps 85 source records to 78 distinct files. Eleven historical source dependencies have now been added, giving 96 provenance records and 89 distinct imported files. The [source manifest](source_manifest.tsv) records original and current SHA-256 hashes and every source-to-destination mapping. The empty `adakn_gam.R` supplied in the archive is retained as a placeholder, not an implementation.
 
 HPC path literals now use named configuration entries. Prior validation scripts use configurable writable workspaces so reference inputs and derived files retain their original layout. Statistical settings and calculations have been retained; known manuscript/version conflicts are documented, not silently resolved. Full simulations and raw-data fits have not been rerun.
 
-- Historical `source()` drivers still need frozen external AnnoKn/AnnoGK and comparator sources. Package-based revision drivers load `AnnoKn` / `AnnoGKR`; installing the packages alone does not supply all analysis dependencies.
+- All active historical `source()` dependencies are now bundled in [`helpers/legacy/`](helpers/legacy/README.md), and their path keys resolve inside the checkout by default. Package-based revision drivers load `AnnoKn` / `AnnoGKR`. R package dependencies still need to be installed; see the helper README for the tested environment.
 - The archive's five comparator/transfer helpers are bundled under `helpers/revision_comparators/`, separate from the historical comparator version.
 - Datasets, saved result bundles and machine-specific profiles are not included. See [DATA_REQUIREMENTS.md](DATA_REQUIREMENTS.md) for inputs, layouts and execution order.
 - See [FIGURE_TABLE_COVERAGE.md](FIGURE_TABLE_COVERAGE.md) for every final figure/table, its code, agreement evidence and required data. Integration does not certify complete manuscript reproduction.
 
 ## Configure paths and launch a script
 
-On a new checkout, copy `config.example.R` to `config.local.R` in this directory and edit the latter. The local file is ignored by Git. Each root can point to a local disk, network filesystem, or mounted data directory. A relative path is resolved beside the configuration file. The runner finds the checkout from its own location, so it can be launched from another working directory.
+Synthetic Figure 1 simulations use bundled sources and default local output paths without a local configuration. To customize data/output locations, copy `config.example.R` to `config.local.R` in this directory and edit the latter. The local file is ignored by Git. Each root can point to a local disk, network filesystem, or mounted data directory. A relative path is resolved beside the configuration file. The runner finds the checkout from its own location, so it can be launched from another working directory.
 
 ```r
 list(
   data_root = "/your/data/annokn",
   output_root = "/your/results/annokn",
-  source_root = "/your/frozen-source-bundle",
   paths = list(
     gtex_expression = "/your/expression/GTEx_Gene_expression_adjust_covariates",
     ldsc_annotations = "/your/annotations/baselineLD_v2.2"
@@ -33,12 +32,12 @@ list(
 )
 ```
 
-The default roots are `reproducibility/data/`, `reproducibility/outputs/`, and `reproducibility/external/`. All three directories are ignored by Git. Individual `paths` overrides take precedence over root defaults. The [path specification](config/paths.tsv) lists every key, its default subdirectory, and the expected files; the [usage index](config/path_usage.tsv) connects those keys to scripts and current repository line numbers.
+The default roots are `reproducibility/data/`, `reproducibility/outputs/`, and `reproducibility/external/`. All three directories are ignored by Git. Active source dependencies use the tracked repository root, not `external/`; the external root is retained for inactive archived code. Individual `paths` overrides take precedence over root defaults. If an older local configuration overrides `annokn_source`, `annogk_source`, or `comparison_utils`, remove those entries to use the bundled files. The [path specification](config/paths.tsv) lists every key, its default subdirectory, and the expected files; the [usage index](config/path_usage.tsv) connects those keys to scripts and current repository line numbers.
 
 | Path keys | Required contents |
 | --- | --- |
-| `annokn_source`, `annogk_source` | The historical `KF_anno.R`, `GK_anno.R`, and `GhostKnockoff.R` source files used by these imported drivers |
-| `comparison_utils` | The historical AdaKn/comparison helper `.R` files listed in the path specification; versions can differ from the newer revision archive |
+| `annokn_source`, `annogk_source` | Bundled `helpers/legacy/annokn/KF_anno.R` and `helpers/legacy/annogk/{GK_anno.R,GhostKnockoff.R}` |
+| `comparison_utils` | Eight bundled historical helpers in `helpers/legacy/comparison_utils/`; kept separate from the newer revision archive versions |
 | `gtex_expression` | Covariate-adjusted expression, organized by PC setting, chromosome, gene, and tissue |
 | `gtex_plink` | GTEx `.bed`, `.bim`, and `.fam` files, organized by ancestry and MAF filtering |
 | `gtex_gene_coordinates`, `gtex_null_gene_coordinates`, `gtex_variant_coordinates` | Per-chromosome/tissue gene coordinates and hg38 SNP identifier/position mapping files |
@@ -75,6 +74,9 @@ Infrastructure checks can be run without fitting models:
 
 ```bash
 Rscript reproducibility/tests/test_paths.R reproducibility
+Rscript reproducibility/tests/test_source_bundle.R reproducibility
+# After installing R dependencies, also check source loading:
+Rscript reproducibility/tests/test_source_bundle.R reproducibility --load
 ```
 
 ## Correspondence to the final manuscript

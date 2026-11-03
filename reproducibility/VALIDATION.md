@@ -17,3 +17,24 @@ Rscript reproducibility/tests/test_paths.R reproducibility
 ```
 
 The Height checks require the frozen inputs described in [DATA_REQUIREMENTS.md](DATA_REQUIREMENTS.md). Full simulations, genotype/GWAS fits, live API audits, dependency installation and end-to-end reproduction of all final figures were not run in this integration. Missing workflows and version conflicts remain in [FIGURE_TABLE_COVERAGE.md](FIGURE_TABLE_COVERAGE.md).
+
+## Historical source bundle — 2026-11-03
+
+Eleven historical source files were added under `helpers/legacy/`: one AnnoKn source, two AnnoGK/GhostKnockoff sources and eight comparison utilities. The manifest now contains 96 source records mapping to 89 distinct imported files. No analysis-driver settings or calculations were changed by this addition.
+
+- All eleven files have identical parsed R expression trees to their original HPC copies. Only indentation, trailing whitespace and EOF whitespace were normalized. All 96 current manifest hashes match the repository files.
+- All 83 R files in the reproducibility directory parse, including configuration and test infrastructure.
+- The active source-path audit resolves 16 distinct files inside the checkout: the eleven additions and five previously bundled revision helpers. No nested `source()`/`sys.source()` calls were found in those files.
+- Source loading passed in the existing R 4.3.3 environment: Figure 1's eight utilities and AnnoKn functions, historical AnnoGK/GhostKnockoff functions, and the separate revision helpers. The observed package versions are recorded in `environment/legacy_package_versions.tsv`.
+- A copy in a different path containing spaces, without `config.local.R`, `data/`, `outputs/` or `external/`, passed the same source-loading checks and the real Figure 1 driver's `--check` preflight from another working directory. Source resolution therefore does not require the original HPC source directories.
+- Existing R/Python runner tests passed after the default source-path changes.
+
+To rerun the new checks:
+
+```bash
+Rscript reproducibility/tests/test_source_bundle.R reproducibility
+# Requires the R dependencies described in helpers/legacy/README.md:
+Rscript reproducibility/tests/test_source_bundle.R reproducibility --load
+```
+
+Fresh dependency installation, full simulation fits and final figure values were not tested by these source-loading checks. Optional historical branches were preserved but not executed. The previously documented data and scientific-version gaps still apply.

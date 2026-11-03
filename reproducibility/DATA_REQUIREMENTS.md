@@ -7,7 +7,7 @@ All script paths below are relative to `reproducibility/` and are launched with 
 ## Packages and source versions
 
 - Install the root `AnnoKn` package and nested `software/AnnoGKR` package for package-based revision drivers. The latter includes `GK_anno_dss()` and its related helpers.
-- Older scripts imported from `code_xiangyu.zip`, and some revision comparisons, still source historical files through `annokn_source`, `annogk_source`, and `comparison_utils`. Supply those exact versions; do not replace them with similarly named functions without checking numerical equivalence.
+- Older scripts imported from `code_xiangyu.zip`, and some revision comparisons, still source historical files through `annokn_source`, `annogk_source`, and `comparison_utils`. These exact historical files are now bundled under `helpers/legacy/` and resolved automatically. Do not replace them with similarly named functions without checking numerical equivalence. See [the source bundle notes](helpers/legacy/README.md) for package requirements.
 - `revision_helpers` resolves automatically to the bundled `helpers/revision_comparators/` directory. These helpers differ from the older comparator sources. The empty `adakn_gam.R` is not used as an implementation.
 - Drivers additionally use packages including knockoff, snpknock, adaptiveKnockoff, ghostbasil, glmnet, gam, susieR, genio, bigstatsr, data.table and plotting/tidyverse packages. See each driver's `library`/`require` calls. `environment/transfer_commands.txt` preserves historical installation notes, not a complete tested environment lockfile.
 - Python validation scripts use the standard library and Python 3.9+. GTEx API audits contact external services and require network access; live responses may differ from the historical responses. Freeze response/cache versions before claiming exact reproduction.
@@ -18,7 +18,7 @@ Synthetic simulation drivers generate their own genotype/annotation/outcome data
 
 | Module | Run first | Run afterwards | Required inputs / configuration |
 | --- | --- | --- | --- |
-| Original AnnoKn/AnnoGK | Generators under `simulations/annokn/` and `simulations/annogk/` | Corresponding result scripts | Historical sources/comparators; annotation mode, parameter grids, replicate sets; 1D/5D first-100-retained file lists must be frozen |
+| Original AnnoKn/AnnoGK | Generators under `simulations/annokn/` and `simulations/annogk/` | Corresponding result scripts | Bundled historical sources/comparators and installed R dependencies; annotation mode, parameter grids, replicate sets; 1D/5D first-100-retained file lists must be frozen |
 | Annotation dependence | `annotation_dependence/1dim.R`, `1dim_indep.R` | Corresponding `_result.R` | AnnoKn and comparison dependencies; separate dependent/independent files |
 | Transfer | `transfer_learning/numerical_experiments_synthetic_data.R`, `numerical_experiments_new_example.R` | `plot_results.R`, `plot_results_new_example.R` | Bundled transfer helper; homogeneous filename suffix conflict (`error=""` vs `"corrected"`); heterogeneous single/all annotation settings |
 | Summary AdaKn | `summary_adakn/continuous.R`, `binary.R` | `result.R` | p=300/600/1000; annotation modes. Its result slots differ from the older DSS comparison: do not mix files |
