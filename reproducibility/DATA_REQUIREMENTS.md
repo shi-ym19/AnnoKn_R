@@ -14,6 +14,8 @@ All script paths below are relative to `reproducibility/` and are launched with 
 
 ## Simulation inputs and outputs
 
+Main Figure 2 uses `simulations/annogk/continuous.R` followed by the standalone `simulations/annogk/figure2_result.R`. The reader requires all 300 files (p=1000, continuous annotation, three heritabilities, IDs 1–100), rejects invalid or missing results, and exports the PDF, plotted values and input checksums. See [Figure 2 instructions](simulations/annogk/README.md). Historical `result.R` remains an uncleaned multi-figure script for reference.
+
 Synthetic simulation drivers generate their own genotype/annotation/outcome data. Their readers require the full set of saved replicate files for each parameter combination. Missing-file handling differs by reader. The 1D and 5D readers remove missing-file rows and use the first 100 retained results; their search limits (150/120) are not the aggregation count. Validate the selected file IDs and ensure enough readable results.
 
 | Module | Run first | Run afterwards | Required inputs / configuration |

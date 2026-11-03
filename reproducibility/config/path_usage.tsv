@@ -493,3 +493,8 @@ simulations/true_genotype/simu_insample.R	77	ukbb		False
 simulations/true_genotype/simu_insample.R	80	ukbb	EUR_0.05maf/real_simulation/region_information/chr	False
 simulations/true_genotype/simu_insample.R	83	ukbb	EUR/fourier_ls-all.bed	False
 simulations/true_genotype/simu_insample.R	459	true_genotype_legacy_results	result_insample_iter_	False
+simulations/annogk/figure2_result.R	24	annogk_results		False
+simulations/annogk/figure2_result.R	43	annogk_results	heri_final_10_	False
+simulations/annogk/figure2_result.R	168	plots	AnnoGK_simu_strong_p1000.pdf	False
+simulations/annogk/figure2_result.R	171	plots	AnnoGK_simu_strong_p1000_values.tsv	False
+simulations/annogk/figure2_result.R	175	plots	AnnoGK_simu_strong_p1000_inputs.tsv	False

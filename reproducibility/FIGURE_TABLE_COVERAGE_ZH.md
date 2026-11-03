@@ -38,14 +38,14 @@
 <a id="main-figure-2"></a>
 ### 图 2｜p=1000 的连续注释汇总统计方法比较（PDF 第 18 页）
 
-**是否有代码：** 有对应分析代码；需完成所列配置/核对。
+**是否有代码：** 代码及 source 依赖齐全；已有结果汇总通过。
 
-代码：[simulations/annogk/continuous.R](simulations/annogk/continuous.R)；[simulations/annogk/result.R](simulations/annogk/result.R)。
+代码：[simulations/annogk/continuous.R](simulations/annogk/continuous.R)；[simulations/annogk/figure2_result.R](simulations/annogk/figure2_result.R)。[运行说明](simulations/annogk/README.md)。
 
-**是否与最终稿一致：待核对；尚未确认完整图表数值一致。** 有生成及绘图代码；需按本图选择 p、注释模式和结果文件。连续图默认 p=600、二元图默认 p=300，输出名也需同步调整。尚未逐点验证最终图。 本项要求 连续注释、p=1000。
+**是否与最终稿一致：已有结果的汇总值已核对，曲线与最终稿吻合；从头模拟待验证。** 正文专用 figure2_result.R 固定连续注释、p=1000、三种 h² 及编号 1–100；要求 300 份有效结果，缺失或异常时报错，直接导出 PDF、168 个绘图值和输入文件校验清单。已有结果实跑通过，汇总值与原连续绘图块一致；原块重画曲线与最终稿 PDF 坐标对照吻合。尚未从头重跑模拟。旧 result.R 保留作历史参考，补充材料流程仍需单独整理。
 
-- **直接汇总/作图所需数据：** annogk_results 下所选 p、h²、连续/二元注释的完整逐次 RData；图中需读取相应方法的 power/FDR 或 time。
-- **从头计算还需要：** 驱动生成 AR(1) X、Y、注释及汇总统计；无需外部真实数据。需要匹配的 AnnoKn/AnnoGK/比较函数版本。
+- **直接汇总/作图所需数据：** 连续注释、p=1000、h²=0.05/0.1/0.2、编号1–100的完整300份RData。
+- **从头计算还需要：** 驱动自行生成数据；历史 source 文件已随仓库提供，仍需安装 R 依赖。
 
 <a id="main-table-1"></a>
 ### 表 1｜GTEx 十个组织、三种方法的 eGene 数量（PDF 第 20 页）

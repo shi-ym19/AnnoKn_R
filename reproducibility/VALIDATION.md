@@ -38,3 +38,14 @@ Rscript reproducibility/tests/test_source_bundle.R reproducibility --load
 ```
 
 Fresh dependency installation, full simulation fits and final figure values were not tested by these source-loading checks. Optional historical branches were preserved but not executed. The previously documented data and scientific-version gaps still apply.
+
+## Standalone main Figure 2 reader — 2026-11-03
+
+`simulations/annogk/figure2_result.R` derives the continuous plotting block from the historical `result.R`, selecting p=1000 and keeping its arithmetic means and four plotted method slots (1/3/4/6). The generator and historical multi-figure reader remain unchanged. The new entry point checks all 300 inputs before averaging, rejects invalid metric vectors, omits exploratory plotting, and saves directly using a generic font and a supported PDF device. It also exports plotted values and input checksums.
+
+- A run using the existing 300 historical result files succeeded. All 168 exported values and labels exactly matched the previously audited original continuous block configured for p=1000 (maximum numerical difference zero).
+- That original-block plot was compared with the final manuscript Figure 2: 24 colored curve paths / 168 vertices aligned within 0.0037 PDF points after per-panel coordinate scaling and translation. This verifies curve geometry at rendering precision, not byte-identical documents or a fresh simulation run.
+- A relocated fixture with known means passed through the real runner. All 168 expected means matched within 1e-12, the PDF and 300-file checksum manifest were produced, and no default `Rplots.pdf` was created. Missing inputs and invalid metric vectors both stopped the reader before replacing an existing plot.
+- Both the Cairo output and an explicitly selected standard PDF fallback were exercised in the current environment.
+
+Run the fixture check with `Rscript reproducibility/tests/test_figure2.R reproducibility` (requires ggplot2 and dplyr). The manifest now has 97 provenance records and 90 distinct imported/derived source files. Fresh dependency installation and the full generation of new Figure 2 simulation results remain untested.
