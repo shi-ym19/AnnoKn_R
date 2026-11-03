@@ -4,6 +4,14 @@
 
 ---
 
+## Summary-statistic package (AnnoGKR)
+
+The independent [AnnoGKR package](software/AnnoGKR/README.md) is included under
+`software/AnnoGKR/`. It contains `GK_anno_M()`, `GK_simple()`, and the historical
+`GK_anno_dss()` implementation needed by the DSS simulation comparisons.
+Install it separately; installing the root AnnoKn package does not install it.
+See its README for dependencies and local or GitHub installation commands.
+
 ## Installation
 
 To ensure a stable environment and correct compilation of dependencies (such as `glmnet` and `knockoff`), we recommend using **Conda** to manage your R environment.
