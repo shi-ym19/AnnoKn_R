@@ -7,7 +7,7 @@ This repository provides two independently installable R packages for annotation
 | **AnnoKn** | Repository root | Individual-level data with functional annotations | `AnnoKn()`, `AnnoKn_lite()` |
 | **AnnoGKR** | [`software/AnnoGKR/`](software/AnnoGKR/) | Summary statistics with an LD matrix and annotations | `GK_anno_M()`, `GK_simple()`, `GK_anno_dss()` |
 
-Manuscript simulations, real-data analyses, and their figure/table correspondence are described in [`reproducibility/README.md`](reproducibility/README.md).
+Manuscript simulations, real-data analyses, and their figure/table correspondence are described in [`reproducibility/README.md`](reproducibility/README.md). Data sources and access instructions are listed in its [Data availability section](reproducibility/README.md#data-availability).
 
 ## Installation
 
