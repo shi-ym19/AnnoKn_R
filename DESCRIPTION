@@ -1,0 +1,13 @@
+Package: AnnoKn
+Title: Annotation-informed knockoffs
+Version: 0.0.0.9000
+Authors@R:
+    person("Anonymous", "Authors", email = "review@example.invalid", role = c("aut", "cre"))
+Description: We introduce annotation-informed knockoffs (AnnoKn), a knockoff-based method that performs annotation-informed variable selection with strict control of the false discovery rate. AnnoKn integrates the knockoff procedure with adaptive Lasso regression to evaluate the importance of multiple covariates while incorporating functional annotation information within a unified Bayesian framework. To facilitate real-world applications where individual-level data are not accessible, we further extend AnnoKn to operate on summary statistics (AnnoGK). 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports: 
+    glmnet (>= 4.1.10),
+    knockoff (>= 0.3.6)

@@ -1,0 +1,20 @@
+AnnoGKR source attribution and review modifications
+
+Upstream package: AnnoGKR 0.1.0
+Upstream authors and repository: anonymized for peer review.
+License: GPL-3
+Review package version: 0.1.0.9001
+
+R/AnnoGK.R, R/GhostKnockoff.R, and R/KF_anno.R retain the upstream implementations.
+R/AnnoGK_dss.R incorporates the original authors' historical DSS implementation:
+  GK_anno_dss
+  sol_beta_and_lam_ps_dss
+  cv_func_dss
+  GhostKnockoff.lambda
+Only GK_anno_dss is exported; the three helpers are internal.
+Function documentation and package tests accompany this extension.
+
+This review copy anonymizes author/contact metadata and source identifiers.
+The unredacted attribution is retained by the authors and is to be restored in
+materials published after anonymous review. License declarations and notices
+are retained. The root AnnoKn package is independently licensed under MIT.
