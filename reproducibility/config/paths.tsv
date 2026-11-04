@@ -55,4 +55,4 @@ archived_height_results	output	archived/height	Inactive historical output refere
 archived_scz_regions	data	archived/scz_regions	Inactive historical region reference	Region text files
 height_validation_workspace	data	workspaces/height	Writable analysis workspace; reference inputs and derived outputs coexist	reference/ GENCODE v19, frozen HGNC and GeneCards panels; annot_pvalus/{result,risk_region}/; height_ten_seed_region_stability_q0p1/
 scz_validation_workspace	data	workspaces/scz	Writable SCZ validation workspace; reference inputs and derived outputs coexist	result/ four-method RData; reference/ SCHEMA panels; genecards_SCZ_top100.csv; hundred_seed_region_stability_q0p1/
-gtex_validation_workspace	data	workspaces/gtex	Writable GTEx validation workspace; reference inputs and derived outputs coexist	result/, new_seed/result/, gene_coor/, method-specific eGene summaries; see DATA_REQUIREMENTS.md
+gtex_validation_workspace	data	workspaces/gtex	Writable GTEx validation workspace; reference inputs and derived outputs coexist	result/, new_seed/result/, gene_coor/, method-specific eGene summaries
