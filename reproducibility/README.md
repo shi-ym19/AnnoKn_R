@@ -143,10 +143,10 @@ These files support the analysis scripts rather than a separate manuscript exper
 | [`run.R`](run.R), [`R/paths.R`](R/paths.R), [`python/run_analysis.py`](python/run_analysis.py) | Launch analyses and resolve configured paths for R/Python scripts |
 | [`config.example.R`](config.example.R) | Template for local data/output settings (`config.local.R`) |
 | [`config/`](config/) | `paths.tsv`: input/output keys and expected file layouts |
-| [`environment/`](environment/) | `legacy_package_versions.tsv`: recorded R package versions |
+| [`environment/`](environment/) | Checked package versions, installation instructions, dependency checker, and software references |
 | [`tests/`](tests/) | `test_paths.R`: runner/path checks; `test_source_bundle.R`: source-function checks; `test_figure2.R`: Figure 2 summary/export checks |
 
-Install the packages described in the [root README](../README.md) and the dependencies loaded by the selected scripts. Additional simulation dependencies include `xtune`, `adaptMT`, `SNPknock`, `adaptiveKnockoff`, and the R packages recorded in `environment/legacy_package_versions.tsv`. Their GitHub sources are `JingxuanH/xtune`, `lihualei71/adaptMT`, `msesia/snpknock`, and `zhimeir/adaptiveKnockoffs`, respectively. Python utilities require Python 3.9 or later.
+Install the packages described in the [root README](../README.md) and the dependencies loaded by the selected scripts. The [dependency guide](environment/README.md) provides checked versions and installation sources, including `xtune`, `adaptMT`, `SNPknock`, `adaptiveKnockoff`, and `doMC`; it also describes the installation/load checks and provides software citations. Python utilities require Python 3.9 or later and use only standard-library modules.
 
 Copy `config.example.R` to `config.local.R` to set input/output paths; see `config/paths.tsv` for required filenames. Validation workspace directories must contain the reference inputs and be writable.
 
