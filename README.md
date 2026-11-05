@@ -26,6 +26,8 @@ remotes::install_local("software/AnnoGKR", upgrade = "never")
 
 Package dependencies are declared in the two `DESCRIPTION` files. A Linux Conda environment specification is available in [`software/AnnoGKR/AnnoGK.yml`](software/AnnoGKR/AnnoGK.yml). Author/contact metadata are anonymized for peer review.
 
+The [dependency guide](reproducibility/environment/README.md) provides checked package versions, installation commands for the analysis scripts, a dependency checker, and software references.
+
 ## Usage
 
 **AnnoKn:** supply an individual-level design matrix `X`, its knockoff matrix `Xk`, response `y`, and annotation matrix `R` (one row per feature).
