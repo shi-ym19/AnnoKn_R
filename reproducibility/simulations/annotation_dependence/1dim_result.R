@@ -206,8 +206,8 @@ linetypes <- c('AdaPT' = "82",
                'AdaKn (GAM)' = "14",
                "AdaKn (RF)" = "22",
                'AdaKn (EM)' = "81",
-               "AnnoKn" = "dashed", # 2
-               "AnnoKn-lite" = "dotted") # 3
+               "AnnoKn" = "solid", # 1
+               "AnnoKn-lite" = "solid") # 1
 
 
 get_legend <- function(myggplot){
